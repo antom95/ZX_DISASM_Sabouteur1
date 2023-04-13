@@ -73,7 +73,7 @@ B $62DB,393,8*49,1
 t $6464 Message at 6464
 T $6464,3,3
 b $6467 Data block at 6467
-B $6467,371,8*46,3
+;B $6467,371,8*46,3
 b $6590 Gameplay Screen Buffer (used by temp messages)
 c $65DA Routine at 65DA
 t $65E7 Reward Message
@@ -143,6 +143,7 @@ b $791E GAME MAP Data
 ;D $791E #SCANGAMEMAP$7C2E
 
 W $791E,2,2,2,2,2 #TRACESCREEN
+W $7984
 W $79C6,2,2,2,2,2 #TRACESCREEN
 W $7A17,2,2,2,2,2 #TRACESCREEN
 B $7A23
@@ -278,9 +279,14 @@ D $9DCD Used by the routines at #R$A154, #R$A15F, #R$A1A6, #R$A1B5, #R$A1C0, #R$
 c $9DD9 Routine at 9DD9
 D $9DD9 Used by the routines at #R$9CA8, #R$9DF1, #R$A434, #R$B937, #R$BC55, #R$C22F, #R$C4F6, #R$C50D, #R$C5C6 and #R$FA31.
 c $9DDA Routine at 9DDA
+b $9DEF Data block at 9DEF
+B $9DEF,2,2
+c $9DF1 Routine at 9DF1
+D $9DF1 Used by the routine at #R$9DDA.
+b $9DF5 Background Games Screen Data 2
 B $9DF5 Background Games Screen Data 2
-W $9DF5,2,2,2,2,2 #TRACESCREEN$9DF5,$f700,$6590
-W $9E22,2,2,2,2,2 #TRACESCREEN$9E22,$f700,$6590
+W $9DF5,2,2,2,2,2 #TRACESCREEN
+W $9E22,2,2,2,2,2 #TRACESCREEN
 W $9E73,2,2,2,2,2 #TRACESCREEN$9E73,$f700,$6590
 W $9EB8,2,2,2,2,2 #TRACESCREEN$9EB8,$f700,$6590
 W $9ED9,2,2,2,2,2 #TRACESCREEN$9ED9,$f700,$6590
@@ -288,13 +294,6 @@ W $9EFA,2,2,2,2,2 #TRACESCREEN$9EFA,$f700,$6590
 W $9F3A,2,2,2,2,2 #TRACESCREEN$9F3A,$f700,$6590
 W $9F7E,2,2,2,2,2 #TRACESCREEN$9F7E,$f700,$6590
 W $A022,2,2,2,2,2 #TRACESCREEN$A022,$f700,$6590
-
-b $9DEF Data block at 9DEF
-B $9DEF,2,2
-c $9DF1 Routine at 9DF1
-D $9DF1 Used by the routine at #R$9DDA.
-b $9DF5 Data block at 9DF5
-B $9DF5,746,8*93,2
 c $A0DF Routine at A0DF
 N $A0E2 This entry point is used by the routines at #R$A0E8, #R$A0ED, #R$A0F2, #R$A0F7, #R$A0FC, #R$A101, #R$A106, #R$A10B, #R$A110, #R$A115, #R$A11F, #R$A124 and #R$A129.
 N $A0E5 This entry point is used by the routine at #R$A142.

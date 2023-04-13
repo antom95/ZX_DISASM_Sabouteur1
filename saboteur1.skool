@@ -451,16 +451,16 @@ b$6467 DEFB $7F,$7F,$FF,$05,$7F,$7F,$7F,$7F
  $658F DEFB $00
 
 ; Gameplay Screen Buffer (used by temp messages)
-b$6590 DEFB $21,$00,$58,$11,$01,$58,$01
- $6597 DEFB $20,$00,$36,$46,$ED,$B0,$01,$C0
- $659F DEFB $02,$36,$0F,$ED,$B0,$01,$1F,$00
- $65A7 DEFB $36,$06,$ED,$B0,$21,$E0,$58,$11
- $65AF DEFB $00,$00,$0E,$07,$3E,$06,$06,$20
- $65B7 DEFB $77,$23,$10,$FC,$19,$0D,$20,$F6
- $65BF DEFB $21,$E7,$65,$11,$00,$40,$0E,$00
- $65C7 DEFB $CD,$D1,$AE,$11,$00,$48,$0E,$00
- $65CF DEFB $CD,$D1,$AE,$11,$00,$50,$0E,$00
- $65D7 DEFB $CD,$D1,$AE
+b$6590 DEFB $21,$00,$58,$11,$01,$58,$01,$20
+ $6598 DEFB $00,$36,$46,$ED,$B0,$01,$C0,$02
+ $65A0 DEFB $36,$0F,$ED,$B0,$01,$1F,$00,$36
+ $65A8 DEFB $06,$ED,$B0,$21,$E0,$58,$11,$00
+ $65B0 DEFB $00,$0E,$07,$3E,$06,$06,$20,$77
+ $65B8 DEFB $23,$10,$FC,$19,$0D,$20,$F6,$21
+ $65C0 DEFB $E7,$65,$11,$00,$40,$0E,$00,$CD
+ $65C8 DEFB $D1,$AE,$11,$00,$48,$0E,$00,$CD
+ $65D0 DEFB $D1,$AE,$11,$00,$50,$0E,$00,$CD
+ $65D8 DEFB $D1,$AE
 
 ; Routine at 65DA
 c$65DA XOR A         ;
@@ -1399,40 +1399,40 @@ b$791E DEFW $B446                           ; {#TRACESCREEN
  $797C DEFW $6621                           ;
  $797E DEFW $0301                           ;
  $7980 DEFW $2512                           ;
- $7982 DEFW $FF66                           ;
- $7984 DEFW $F0F1                           ;
- $7986 DEFW $0A07                           ;
- $7988 DEFW $0A07                           ;
- $798A DEFW $0A07                           ;
- $798C DEFW $0A07                           ;
- $798E DEFW $FFFF                           ;
- $7990 DEFW $5839                           ;
- $7992 DEFW $39FF                           ;
- $7994 DEFW $583A                           ;
- $7996 DEFW $3A39                           ;
- $7998 DEFW $583A                           ;
- $799A DEFW $3A3A                           ;
- $799C DEFW $583A                           ;
- $799E DEFW $3A3A                           ;
- $79A0 DEFW $FF3B                           ;
- $79A2 DEFW $3B3A                           ;
- $79A4 DEFW $FFFF                           ;
- $79A6 DEFW $FF3B                           ;
- $79A8 DEFW $FFFF                           ;
- $79AA DEFW $3C59                           ;
- $79AC DEFW $FFFF                           ;
- $79AE DEFW $3D59                           ;
- $79B0 DEFW $FF3C                           ;
- $79B2 DEFW $3D59                           ;
- $79B4 DEFW $3C3D                           ;
- $79B6 DEFW $3D59                           ;
- $79B8 DEFW $3D3D                           ;
- $79BA DEFW $3EFF                           ;
- $79BC DEFW $3D3D                           ;
- $79BE DEFW $FFFF                           ;
- $79C0 DEFW $3D3E                           ;
- $79C2 DEFW $FFFF                           ;
- $79C4 DEFW $3EFF                           ; }
+ $7982 DEFW $FF66                           ; }
+ $7984 DEFW $F0F1
+ $7986 DEFW $0A07
+ $7988 DEFW $0A07
+ $798A DEFW $0A07
+ $798C DEFW $0A07
+ $798E DEFW $FFFF
+ $7990 DEFW $5839
+ $7992 DEFW $39FF
+ $7994 DEFW $583A
+ $7996 DEFW $3A39
+ $7998 DEFW $583A
+ $799A DEFW $3A3A
+ $799C DEFW $583A
+ $799E DEFW $3A3A
+ $79A0 DEFW $FF3B
+ $79A2 DEFW $3B3A
+ $79A4 DEFW $FFFF
+ $79A6 DEFW $FF3B
+ $79A8 DEFW $FFFF
+ $79AA DEFW $3C59
+ $79AC DEFW $FFFF
+ $79AE DEFW $3D59
+ $79B0 DEFW $FF3C
+ $79B2 DEFW $3D59
+ $79B4 DEFW $3C3D
+ $79B6 DEFW $3D59
+ $79B8 DEFW $3D3D
+ $79BA DEFW $3EFF
+ $79BC DEFW $3D3D
+ $79BE DEFW $FFFF
+ $79C0 DEFW $3D3E
+ $79C2 DEFW $FFFF
+ $79C4 DEFW $3EFF
  $79C6 DEFW $B452                           ; {#TRACESCREEN
  $79C8 DEFW $B42E                           ;
  $79CA DEFW $791E                           ;
@@ -6063,148 +6063,383 @@ c$9DF1 DJNZ $9DD9    ;
  $9DF3 DI            ;
  $9DF4 RET           ;
 
-; Data block at 9DF5
-b$9DF5 DEFB $18,$79                         ; {#TRACESCREEN$9DF5,$f700,$6590
- $9DF7 DEFW $A138                           ;
- $9DF9 DEFW $9BE7                           ;
- $9DFB DEFW $0000                           ; }
- $9DFD DEFB $22,$9E,$00,$00,$02,$07,$FF,$90
- $9E05 DEFB $65,$03,$FF,$02,$0C,$AC,$65,$02
- $9E0D DEFB $7A,$FF,$14,$67,$0C,$48,$73,$02
- $9E15 DEFB $0D,$A4,$65,$0E,$2A,$A7,$6F,$01
- $9E1D DEFB $0B,$2B,$C5,$6F,$FF
- $9E22 DEFW $B41F                           ; {#TRACESCREEN$9E22,$f700,$6590
- $9E24 DEFB $22                             ;
- $9E25 DEFB $B4                             ;
- $9E26 DEFW $0000                           ;
- $9E28 DEFW $0000                           ;
- $9E2A DEFW $0000                           ;
- $9E2C DEFB $F5                             ; }
- $9E2D DEFB $9D,$04,$FF,$03,$00,$14,$02,$5A
- $9E35 DEFB $67,$03,$02,$1A,$0C,$B0,$65,$09
- $9E3D DEFB $FF,$05,$C9,$65,$0C,$48,$73,$02
- $9E45 DEFB $03,$48,$67,$05,$02,$01,$9D,$88
- $9E4D DEFB $2A,$67,$05,$02,$04,$BB,$71,$A5
- $9E55 DEFB $70,$05,$03,$03,$A0,$71,$B7,$70
- $9E5D DEFB $05,$03,$03,$A0,$71,$BD,$70,$05
- $9E65 DEFB $03,$03,$A0,$71,$CA,$70,$05,$03
- $9E6D DEFB $04,$9C,$84,$96,$70,$FF
- $9E73 DEFW $B41F                           ; {#TRACESCREEN$9E73,$f700,$6590
- $9E75 DEFB $22,$B4                         ;
- $9E77 DEFW $9EB8                           ;
- $9E79 DEFW $0000                           ;
- $9E7B DEFW $0000                           ; }
- $9E7D DEFB $E7,$9B,$02,$78,$FF,$90,$65,$03
- $9E85 DEFB $FF,$06,$0D,$20,$66,$03,$FF,$06
- $9E8D DEFB $06,$E4,$66,$08,$FF,$04,$1F,$67
- $9E95 DEFB $02,$0C,$FA,$DA,$66,$01,$0D,$3A
- $9E9D DEFB $18,$66,$01,$07,$3A,$0C,$66,$02
- $9EA5 DEFB $0A,$FA,$E9,$66,$0C,$48,$73,$02
- $9EAD DEFB $0D,$1A,$66,$05,$02,$01,$9D,$88
- $9EB5 DEFB $EC,$66,$FF
- $9EB8 DEFW $7918                           ; {#TRACESCREEN$9EB8,$f700,$6590
- $9EBA DEFW $A12E                           ;
- $9EBC DEFB $D9                             ;
- $9EBD DEFB $9E                             ;
- $9EBE DEFW $9E73                           ;
- $9EC0 DEFW $0000                           ;
- $9EC2 DEFW $0000                           ;
- $9EC4 DEFB $02                             ; }
- $9EC5 DEFB $78,$FF,$90,$65,$02,$1E,$FA,$DA
- $9ECD DEFB $66,$01,$07,$28,$03,$70,$01,$07
- $9ED5 DEFB $28,$13,$70,$FF
- $9ED9 DEFW $B41F                           ; {#TRACESCREEN$9ED9,$f700,$6590
- $9EDB DEFW $B422                           ;
- $9EDD DEFB $FA,$9E                         ;
- $9EDF DEFW $9EB8                           ;
- $9EE1 DEFW $0000                           ;
- $9EE3 DEFW $0000                           ; }
- $9EE5 DEFB $02,$78,$FF,$90,$65,$02,$1E,$FA
- $9EED DEFB $DA,$66,$01,$07,$28,$05,$70,$01
- $9EF5 DEFB $07,$28,$11,$70,$FF
- $9EFA DEFW $B41F                           ; {#TRACESCREEN$9EFA,$f700,$6590
- $9EFC DEFB $22                             ;
- $9EFD DEFB $B4                             ;
- $9EFE DEFW $0000                           ;
- $9F00 DEFW $9ED9                           ;
- $9F02 DEFW $0000                           ;
- $9F04 DEFB $3A                             ; }
- $9F05 DEFB $9F,$02,$7D,$FF,$90,$65,$03,$FF
- $9F0D DEFB $05,$0C,$26,$66,$03,$FF,$14,$05
- $9F15 DEFB $01,$67,$02,$13,$FF,$DF,$66,$02
- $9F1D DEFB $06,$FA,$F2,$66,$01,$07,$3A,$16
- $9F25 DEFB $66,$01,$07,$28,$17,$70,$0C,$48
- $9F2D DEFB $73,$02,$0D,$0E,$66,$05,$02,$01
- $9F35 DEFB $9D,$88,$E0,$66,$FF
- $9F3A DEFW $7918                           ; {#TRACESCREEN$9F3A,$f700,$6590
- $9F3C DEFB $24                             ;
- $9F3D DEFB $A1                             ;
- $9F3E DEFW $0000                           ;
- $9F40 DEFW $9F7E                           ;
- $9F42 DEFW $9EFA                           ;
- $9F44 DEFB $9D                             ; }
- $9F45 DEFB $9B,$03,$FF,$05,$0F,$90,$65,$02
- $9F4D DEFB $3C,$FF,$52,$67,$03,$FF,$14,$02
- $9F55 DEFB $99,$65,$0C,$48,$73,$02,$0F,$96
- $9F5D DEFB $65,$05,$02,$04,$BB,$71,$E3,$70
- $9F65 DEFB $01,$0D,$3A,$DA,$65,$01,$0D,$3A
- $9F6D DEFB $E5,$65,$05,$02,$01,$9D,$88,$68
- $9F75 DEFB $67,$05,$02,$01,$48,$73,$86,$67
- $9F7D DEFB $FF
- $9F7E DEFW $7918                           ; {#TRACESCREEN$9F7E,$f700,$6590
- $9F80 DEFW $A129                           ;
- $9F82 DEFW $9F3A                           ;
- $9F84 DEFB $22                             ;
- $9F85 DEFB $A0,$00,$00,$00,$00,$03,$FF,$02 ; }
- $9F8D DEFB $02,$52,$67,$03,$A3,$1B,$02,$55
- $9F95 DEFB $67,$05,$01,$02,$08,$A0,$54,$67
- $9F9D DEFB $03,$F5,$1A,$0A,$20,$70,$03,$FF
- $9FA5 DEFB $02,$02,$20,$70,$05,$02,$02,$04
- $9FAD DEFB $A0,$2A,$66,$05,$04,$04,$0A,$A0
- $9FB5 DEFB $7C,$70,$05,$04,$04,$0A,$A0,$80
- $9FBD DEFB $70,$05,$04,$04,$0A,$A0,$84,$70
- $9FC5 DEFB $05,$04,$04,$0A,$A0,$88,$70,$05
- $9FCD DEFB $04,$04,$0A,$A0,$8C,$70,$05,$04
- $9FD5 DEFB $04,$0A,$A0,$90,$70,$03,$1B,$18
- $9FDD DEFB $04,$86,$66,$03,$A3,$18,$02,$F0
- $9FE5 DEFB $65,$05,$01,$02,$08,$A0,$EF,$65
- $9FED DEFB $0E,$98,$D3,$65,$02,$16,$0D,$D4
- $9FF5 DEFB $65,$05,$04,$02,$1A,$A0,$A6,$65
- $9FFD DEFB $03,$0D,$04,$02,$AA,$65,$FF,$00
- $A005 DEFB $98,$98,$95,$9E,$9D,$FE,$FB,$FB
- $A00D DEFB $F8,$FD,$FF,$FF,$F7,$FD,$FF,$FF
- $A015 DEFB $F7,$FC,$F9,$F9,$F6,$00,$00,$97
- $A01D DEFB $96,$97,$96,$0D,$0D
- $A022 DEFW $B41F                           ; {#TRACESCREEN$A022,$f700,$6590
- $A024 DEFB $22                             ;
- $A025 DEFB $B4                             ;
- $A026 DEFW $9F7E                           ;
- $A028 DEFW $0000                           ;
- $A02A DEFW $0000                           ;
- $A02C DEFB $00                             ; }
- $A02D DEFB $00,$03,$A3,$1B,$02,$52,$67,$03
- $A035 DEFB $F5,$1A,$0A,$1C,$70,$03,$FF,$02
- $A03D DEFB $02,$34,$70,$05,$02,$02,$A7,$A0
- $A045 DEFB $3E,$66,$05,$04,$04,$0A,$A0,$76
- $A04D DEFB $70,$05,$04,$04,$0A,$A0,$7A,$70
- $A055 DEFB $05,$04,$04,$0A,$A0,$7E,$70,$05
- $A05D DEFB $04,$04,$0A,$A0,$82,$70,$05,$04
- $A065 DEFB $04,$0A,$A0,$86,$70,$05,$04,$04
- $A06D DEFB $0A,$A0,$8A,$70,$03,$1B,$18,$04
- $A075 DEFB $80,$66,$03,$A3,$18,$02,$EA,$65
- $A07D DEFB $05,$01,$02,$AB,$A0,$02,$66,$0E
- $A085 DEFB $94,$E2,$65,$02,$16,$0D,$CC,$65
- $A08D DEFB $05,$04,$02,$AD,$A0,$94,$65,$03
- $A095 DEFB $0D,$04,$02,$90,$65,$01,$08,$FF
- $A09D DEFB $7B,$66,$05,$01,$02,$AB,$A0,$6D
- $A0A5 DEFB $67,$FF,$94,$00,$0D,$94,$9C,$9B
- $A0AD DEFB $93,$92,$00,$00,$0D,$0D,$93,$92
- $A0B5 DEFB $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
- $A0BD DEFB $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
- $A0C5 DEFB $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
- $A0CD DEFB $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
- $A0D5 DEFB $ED,$EC,$EB,$FF,$F3,$F2,$F1,$F0
- $A0DD DEFB $EF,$EE
+; Background Games Screen Data 2
+b$9DF5 DEFW $7918    ; {#TRACESCREEN
+ $9DF7 DEFW $A138    ;
+ $9DF9 DEFW $9BE7    ;
+ $9DFB DEFW $0000    ;
+ $9DFD DEFW $9E22    ;
+ $9DFF DEFW $0000    ;
+ $9E01 DEFW $0702    ;
+ $9E03 DEFW $90FF    ;
+ $9E05 DEFW $0365    ;
+ $9E07 DEFW $02FF    ;
+ $9E09 DEFW $AC0C    ;
+ $9E0B DEFW $0265    ;
+ $9E0D DEFW $FF7A    ;
+ $9E0F DEFW $6714    ;
+ $9E11 DEFW $480C    ;
+ $9E13 DEFW $0273    ;
+ $9E15 DEFW $A40D    ;
+ $9E17 DEFW $0E65    ;
+ $9E19 DEFW $A72A    ;
+ $9E1B DEFW $016F    ;
+ $9E1D DEFW $2B0B    ;
+ $9E1F DEFW $6FC5    ;
+ $9E21 DEFB $FF      ; }
+ $9E22 DEFW $B41F    ; {#TRACESCREEN
+ $9E24 DEFW $B422    ;
+ $9E26 DEFW $0000    ;
+ $9E28 DEFW $0000    ;
+ $9E2A DEFW $0000    ;
+ $9E2C DEFW $9DF5    ;
+ $9E2E DEFW $FF04    ;
+ $9E30 DEFW $0003    ;
+ $9E32 DEFW $0214    ;
+ $9E34 DEFW $675A    ;
+ $9E36 DEFW $0203    ;
+ $9E38 DEFW $0C1A    ;
+ $9E3A DEFW $65B0    ;
+ $9E3C DEFW $FF09    ;
+ $9E3E DEFW $C905    ;
+ $9E40 DEFW $0C65    ;
+ $9E42 DEFW $7348    ;
+ $9E44 DEFW $0302    ;
+ $9E46 DEFW $6748    ;
+ $9E48 DEFW $0205    ;
+ $9E4A DEFW $9D01    ;
+ $9E4C DEFW $2A88    ;
+ $9E4E DEFW $0567    ;
+ $9E50 DEFW $0402    ;
+ $9E52 DEFW $71BB    ;
+ $9E54 DEFW $70A5    ;
+ $9E56 DEFW $0305    ;
+ $9E58 DEFW $A003    ;
+ $9E5A DEFW $B771    ;
+ $9E5C DEFW $0570    ;
+ $9E5E DEFW $0303    ;
+ $9E60 DEFW $71A0    ;
+ $9E62 DEFW $70BD    ;
+ $9E64 DEFW $0305    ;
+ $9E66 DEFW $A003    ;
+ $9E68 DEFW $CA71    ;
+ $9E6A DEFW $0570    ;
+ $9E6C DEFW $0403    ;
+ $9E6E DEFW $849C    ;
+ $9E70 DEFW $7096    ;
+ $9E72 DEFB $FF      ; }
+ $9E73 DEFW $B41F    ; {#TRACESCREEN$9E73,$f700,$6590
+ $9E75 DEFW $B422    ;
+ $9E77 DEFW $9EB8    ;
+ $9E79 DEFW $0000    ;
+ $9E7B DEFW $0000    ;
+ $9E7D DEFW $9BE7    ;
+ $9E7F DEFW $7802    ;
+ $9E81 DEFW $90FF    ;
+ $9E83 DEFW $0365    ;
+ $9E85 DEFW $06FF    ;
+ $9E87 DEFW $200D    ;
+ $9E89 DEFW $0366    ;
+ $9E8B DEFW $06FF    ;
+ $9E8D DEFW $E406    ;
+ $9E8F DEFW $0866    ;
+ $9E91 DEFW $04FF    ;
+ $9E93 DEFW $671F    ;
+ $9E95 DEFW $0C02    ;
+ $9E97 DEFW $DAFA    ;
+ $9E99 DEFW $0166    ;
+ $9E9B DEFW $3A0D    ;
+ $9E9D DEFW $6618    ;
+ $9E9F DEFW $0701    ;
+ $9EA1 DEFW $0C3A    ;
+ $9EA3 DEFW $0266    ;
+ $9EA5 DEFW $FA0A    ;
+ $9EA7 DEFW $66E9    ;
+ $9EA9 DEFW $480C    ;
+ $9EAB DEFW $0273    ;
+ $9EAD DEFW $1A0D    ;
+ $9EAF DEFW $0566    ;
+ $9EB1 DEFW $0102    ;
+ $9EB3 DEFW $889D    ;
+ $9EB5 DEFW $66EC    ;
+ $9EB7 DEFB $FF      ; }
+ $9EB8 DEFW $7918    ; {#TRACESCREEN$9EB8,$f700,$6590
+ $9EBA DEFW $A12E    ;
+ $9EBC DEFW $9ED9    ;
+ $9EBE DEFW $9E73    ;
+ $9EC0 DEFW $0000    ;
+ $9EC2 DEFW $0000    ;
+ $9EC4 DEFW $7802    ;
+ $9EC6 DEFW $90FF    ;
+ $9EC8 DEFW $0265    ;
+ $9ECA DEFW $FA1E    ;
+ $9ECC DEFW $66DA    ;
+ $9ECE DEFW $0701    ;
+ $9ED0 DEFW $0328    ;
+ $9ED2 DEFW $0170    ;
+ $9ED4 DEFW $2807    ;
+ $9ED6 DEFW $7013    ;
+ $9ED8 DEFB $FF      ; }
+ $9ED9 DEFW $B41F    ; {#TRACESCREEN$9ED9,$f700,$6590
+ $9EDB DEFW $B422    ;
+ $9EDD DEFW $9EFA    ;
+ $9EDF DEFW $9EB8    ;
+ $9EE1 DEFW $0000    ;
+ $9EE3 DEFW $0000    ;
+ $9EE5 DEFW $7802    ;
+ $9EE7 DEFW $90FF    ;
+ $9EE9 DEFW $0265    ;
+ $9EEB DEFW $FA1E    ;
+ $9EED DEFW $66DA    ;
+ $9EEF DEFW $0701    ;
+ $9EF1 DEFW $0528    ;
+ $9EF3 DEFW $0170    ;
+ $9EF5 DEFW $2807    ;
+ $9EF7 DEFW $7011    ;
+ $9EF9 DEFB $FF      ; }
+ $9EFA DEFW $B41F    ; {#TRACESCREEN$9EFA,$f700,$6590
+ $9EFC DEFW $B422    ;
+ $9EFE DEFW $0000    ;
+ $9F00 DEFW $9ED9    ;
+ $9F02 DEFW $0000    ;
+ $9F04 DEFW $9F3A    ;
+ $9F06 DEFW $7D02    ;
+ $9F08 DEFW $90FF    ;
+ $9F0A DEFW $0365    ;
+ $9F0C DEFW $05FF    ;
+ $9F0E DEFW $260C    ;
+ $9F10 DEFW $0366    ;
+ $9F12 DEFW $14FF    ;
+ $9F14 DEFW $0105    ;
+ $9F16 DEFW $0267    ;
+ $9F18 DEFW $FF13    ;
+ $9F1A DEFW $66DF    ;
+ $9F1C DEFW $0602    ;
+ $9F1E DEFW $F2FA    ;
+ $9F20 DEFW $0166    ;
+ $9F22 DEFW $3A07    ;
+ $9F24 DEFW $6616    ;
+ $9F26 DEFW $0701    ;
+ $9F28 DEFW $1728    ;
+ $9F2A DEFW $0C70    ;
+ $9F2C DEFW $7348    ;
+ $9F2E DEFW $0D02    ;
+ $9F30 DEFW $660E    ;
+ $9F32 DEFW $0205    ;
+ $9F34 DEFW $9D01    ;
+ $9F36 DEFW $E088    ;
+ $9F38 DEFW $FF66    ; }
+ $9F3A DEFW $7918    ; {#TRACESCREEN$9F3A,$f700,$6590
+ $9F3C DEFW $A124    ;
+ $9F3E DEFW $0000    ;
+ $9F40 DEFW $9F7E    ;
+ $9F42 DEFW $9EFA    ;
+ $9F44 DEFW $9B9D    ;
+ $9F46 DEFW $FF03    ;
+ $9F48 DEFW $0F05    ;
+ $9F4A DEFW $6590    ;
+ $9F4C DEFW $3C02    ;
+ $9F4E DEFW $52FF    ;
+ $9F50 DEFW $0367    ;
+ $9F52 DEFW $14FF    ;
+ $9F54 DEFW $9902    ;
+ $9F56 DEFW $0C65    ;
+ $9F58 DEFW $7348    ;
+ $9F5A DEFW $0F02    ;
+ $9F5C DEFW $6596    ;
+ $9F5E DEFW $0205    ;
+ $9F60 DEFW $BB04    ;
+ $9F62 DEFW $E371    ;
+ $9F64 DEFW $0170    ;
+ $9F66 DEFW $3A0D    ;
+ $9F68 DEFW $65DA    ;
+ $9F6A DEFW $0D01    ;
+ $9F6C DEFW $E53A    ;
+ $9F6E DEFW $0565    ;
+ $9F70 DEFW $0102    ;
+ $9F72 DEFW $889D    ;
+ $9F74 DEFW $6768    ;
+ $9F76 DEFW $0205    ;
+ $9F78 DEFW $4801    ;
+ $9F7A DEFW $8673    ;
+ $9F7C DEFW $FF67    ; }
+ $9F7E DEFW $7918    ; {#TRACESCREEN$9F7E,$f700,$6590
+ $9F80 DEFW $A129    ;
+ $9F82 DEFW $9F3A    ;
+ $9F84 DEFW $A022    ;
+ $9F86 DEFW $0000    ;
+ $9F88 DEFW $0000    ;
+ $9F8A DEFW $FF03    ;
+ $9F8C DEFW $0202    ;
+ $9F8E DEFW $6752    ;
+ $9F90 DEFW $A303    ;
+ $9F92 DEFW $021B    ;
+ $9F94 DEFW $6755    ;
+ $9F96 DEFW $0105    ;
+ $9F98 DEFW $0802    ;
+ $9F9A DEFW $54A0    ;
+ $9F9C DEFW $0367    ;
+ $9F9E DEFW $1AF5    ;
+ $9FA0 DEFW $200A    ;
+ $9FA2 DEFW $0370    ;
+ $9FA4 DEFW $02FF    ;
+ $9FA6 DEFW $2002    ;
+ $9FA8 DEFW $0570    ;
+ $9FAA DEFW $0202    ;
+ $9FAC DEFW $A004    ;
+ $9FAE DEFW $662A    ;
+ $9FB0 DEFW $0405    ;
+ $9FB2 DEFW $0A04    ;
+ $9FB4 DEFW $7CA0    ;
+ $9FB6 DEFW $0570    ;
+ $9FB8 DEFW $0404    ;
+ $9FBA DEFW $A00A    ;
+ $9FBC DEFW $7080    ;
+ $9FBE DEFW $0405    ;
+ $9FC0 DEFW $0A04    ;
+ $9FC2 DEFW $84A0    ;
+ $9FC4 DEFW $0570    ;
+ $9FC6 DEFW $0404    ;
+ $9FC8 DEFW $A00A    ;
+ $9FCA DEFW $7088    ;
+ $9FCC DEFW $0405    ;
+ $9FCE DEFW $0A04    ;
+ $9FD0 DEFW $8CA0    ;
+ $9FD2 DEFW $0570    ;
+ $9FD4 DEFW $0404    ;
+ $9FD6 DEFW $A00A    ;
+ $9FD8 DEFW $7090    ;
+ $9FDA DEFW $1B03    ;
+ $9FDC DEFW $0418    ;
+ $9FDE DEFW $6686    ;
+ $9FE0 DEFW $A303    ;
+ $9FE2 DEFW $0218    ;
+ $9FE4 DEFW $65F0    ;
+ $9FE6 DEFW $0105    ;
+ $9FE8 DEFW $0802    ;
+ $9FEA DEFW $EFA0    ;
+ $9FEC DEFW $0E65    ;
+ $9FEE DEFW $D398    ;
+ $9FF0 DEFW $0265    ;
+ $9FF2 DEFW $0D16    ;
+ $9FF4 DEFW $65D4    ;
+ $9FF6 DEFW $0405    ;
+ $9FF8 DEFW $1A02    ;
+ $9FFA DEFW $A6A0    ;
+ $9FFC DEFW $0365    ;
+ $9FFE DEFW $040D    ;
+ $A000 DEFW $AA02    ;
+ $A002 DEFW $FF65    ;
+ $A004 DEFW $9800    ;
+ $A006 DEFW $9598    ;
+ $A008 DEFW $9D9E    ;
+ $A00A DEFW $FBFE    ;
+ $A00C DEFW $F8FB    ;
+ $A00E DEFW $FFFD    ;
+ $A010 DEFW $F7FF    ;
+ $A012 DEFW $FFFD    ;
+ $A014 DEFW $F7FF    ;
+ $A016 DEFW $F9FC    ;
+ $A018 DEFW $F6F9    ;
+ $A01A DEFW $0000    ;
+ $A01C DEFW $9697    ;
+ $A01E DEFW $9697    ;
+ $A020 DEFW $0D0D    ; }
+ $A022 DEFW $B41F    ; {#TRACESCREEN$A022,$f700,$6590
+ $A024 DEFW $B422    ;
+ $A026 DEFW $9F7E    ;
+ $A028 DEFW $0000    ;
+ $A02A DEFW $0000    ;
+ $A02C DEFW $0000    ;
+ $A02E DEFW $A303    ;
+ $A030 DEFW $021B    ;
+ $A032 DEFW $6752    ;
+ $A034 DEFW $F503    ;
+ $A036 DEFW $0A1A    ;
+ $A038 DEFW $701C    ;
+ $A03A DEFW $FF03    ;
+ $A03C DEFW $0202    ;
+ $A03E DEFW $7034    ;
+ $A040 DEFW $0205    ;
+ $A042 DEFW $A702    ;
+ $A044 DEFW $3EA0    ;
+ $A046 DEFW $0566    ;
+ $A048 DEFW $0404    ;
+ $A04A DEFW $A00A    ;
+ $A04C DEFW $7076    ;
+ $A04E DEFW $0405    ;
+ $A050 DEFW $0A04    ;
+ $A052 DEFW $7AA0    ;
+ $A054 DEFW $0570    ;
+ $A056 DEFW $0404    ;
+ $A058 DEFW $A00A    ;
+ $A05A DEFW $707E    ;
+ $A05C DEFW $0405    ;
+ $A05E DEFW $0A04    ;
+ $A060 DEFW $82A0    ;
+ $A062 DEFW $0570    ;
+ $A064 DEFW $0404    ;
+ $A066 DEFW $A00A    ;
+ $A068 DEFW $7086    ;
+ $A06A DEFW $0405    ;
+ $A06C DEFW $0A04    ;
+ $A06E DEFW $8AA0    ;
+ $A070 DEFW $0370    ;
+ $A072 DEFW $181B    ;
+ $A074 DEFW $8004    ;
+ $A076 DEFW $0366    ;
+ $A078 DEFW $18A3    ;
+ $A07A DEFW $EA02    ;
+ $A07C DEFW $0565    ;
+ $A07E DEFW $0201    ;
+ $A080 DEFW $A0AB    ;
+ $A082 DEFW $6602    ;
+ $A084 DEFW $940E    ;
+ $A086 DEFW $65E2    ;
+ $A088 DEFW $1602    ;
+ $A08A DEFW $CC0D    ;
+ $A08C DEFW $0565    ;
+ $A08E DEFW $0204    ;
+ $A090 DEFW $A0AD    ;
+ $A092 DEFW $6594    ;
+ $A094 DEFW $0D03    ;
+ $A096 DEFW $0204    ;
+ $A098 DEFW $6590    ;
+ $A09A DEFW $0801    ;
+ $A09C DEFW $7BFF    ;
+ $A09E DEFW $0566    ;
+ $A0A0 DEFW $0201    ;
+ $A0A2 DEFW $A0AB    ;
+ $A0A4 DEFW $676D    ;
+ $A0A6 DEFW $94FF    ;
+ $A0A8 DEFW $0D00    ;
+ $A0AA DEFW $9C94    ;
+ $A0AC DEFW $939B    ;
+ $A0AE DEFW $0092    ;
+ $A0B0 DEFW $0D00    ;
+ $A0B2 DEFW $930D    ;
+ $A0B4 DEFW $FF92    ;
+ $A0B6 DEFW $FFFF    ;
+ $A0B8 DEFW $FFFF    ;
+ $A0BA DEFW $FFFF    ;
+ $A0BC DEFW $FFFF    ;
+ $A0BE DEFW $FFFF    ;
+ $A0C0 DEFW $FFFF    ;
+ $A0C2 DEFW $FFFF    ;
+ $A0C4 DEFW $FFFF    ;
+ $A0C6 DEFW $FFFF    ;
+ $A0C8 DEFW $FFFF    ;
+ $A0CA DEFW $FFFF    ;
+ $A0CC DEFW $FFFF    ;
+ $A0CE DEFW $FFFF    ;
+ $A0D0 DEFW $FFFF    ;
+ $A0D2 DEFW $FFFF    ;
+ $A0D4 DEFW $EDFF    ;
+ $A0D6 DEFW $EBEC    ;
+ $A0D8 DEFW $F3FF    ;
+ $A0DA DEFW $F1F2    ;
+ $A0DC DEFW $EFF0    ;
+ $A0DE DEFB $EE      ; }
 
 ; Routine at A0DF
 c$A0DF LD HL,$A1E1   ;
