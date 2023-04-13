@@ -1,19 +1,13 @@
-b $4000 Loading screen
+i $4000 Ignored
 D $4000 #SCR(loading)
-i $4000
 @ $5B00 replace=/#sprite\i/#UDGARRAY#(4#FOR(\1,\1+207,9)||n|;n,#PEEK(n+8)||)
-i $5B00
-b $5b00 Data Block
-;B $5B00 #SPRITES$5b00,8,9,8,1
-;B $5B01 #SPRITES$5b00,32,17,16,2
-;B $5B02 #SPRITES$5b00,1,8,10,1
-B $5b00 #UDGTABLE { #SPRITES$d601,16,17,15,2 | #SPRITES$d601,16,17,10,2 } TABLE#
-;B $5B03 #UDGTABLE {  #SPRITES$5b00,1,16,10,2  | #SPRITES$5b01,1,16,10,2 } TABLE#
-
-
+b $5B00 Data Block
+B $5B00,492,8*61,4 #UDGTABLE { #SPRITES$d601,16,17,15,2 | #SPRITES$d601,16,17,10,2 } TABLE#
+B $5B01,492,8*61,4 #UDGTABLE { #SPRITES$d600,16,8,10,1 } TABLE#
 t $5CEC Message at 5CEC
 T $5CEC,8,8
 b $5CF4 Data block at 5CF4
+B $5CF4,2,2
 t $5CF6 Message at 5CF6
 T $5CF6,9,9
 b $5CFF Data block at 5CFF
@@ -73,13 +67,14 @@ B $62DB,393,8*49,1
 t $6464 Message at 6464
 T $6464,3,3
 b $6467 Data block at 6467
-;B $6467,371,8*46,3
-b $6590 Gameplay Screen Buffer (used by temp messages)
+B $6467,297,8*37,1
+b $6590 Gameplay Screen Background Buffer (used by temp messages)
+B $6590,74,7,8*8,3
 c $65DA Routine at 65DA
 t $65E7 Reward Message
 T $65E7,768,10:n1:55,66*8,46:n1:19,66,42
 b $68E7 Data block at 68E7
-B $68E7,2210,8*276,2
+B $68E7,2210,8*211,7,1,8*64,2
 t $7189 Message at 7189
 T $7189,4,4
 b $718D Data block at 718D
@@ -95,7 +90,8 @@ B $71BF,1,1
 t $71C0 Message at 71C0
 T $71C0,3,3
 b $71C3 Data block at 71C3
-B $71C3,1 Some Very Important Byte
+B $71C3,1,1 Some Very Important Byte
+B $71C4,89,8*11,1
 t $721D Message at 721D
 T $721D,4,4
 b $7221 Data block at 7221
@@ -103,8 +99,8 @@ B $7221,297,8*37,1
 c $734A Routine at 734A
 D $734A Used by the routines at #R$734D, #R$7381, #R$73A4, #R$73C5, #R$73F3, #R$7406, #R$742B, #R$7452 and #R$B38F.
 c $734D Routine at 734D
-c $7359
-c $7361
+c $7359 Routine at 7359
+c $7361 Routine at 7361
 c $7381 Routine at 7381
 D $7381 Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x1e step
 N $7384 This entry point is used by the routine at #R$739F.
@@ -140,161 +136,413 @@ B $752B,1005,8*125,5
 c $7918 Routine at 7918
 c $791B Routine at 791B
 b $791E GAME MAP Data
-;D $791E #SCANGAMEMAP$7C2E
-
-W $791E,2,2,2,2,2 #TRACESCREEN
-W $7984
-W $79C6,2,2,2,2,2 #TRACESCREEN
-W $7A17,2,2,2,2,2 #TRACESCREEN
-B $7A23
-W $7A75,2,2,2,2,2 #TRACESCREEN
-W $7A9E,2,2,2,2,2 #TRACESCREEN
-W $7ACD,2,2,2,2,2 #TRACESCREEN
-W $7AF8,2,2,2,2,2 #TRACESCREEN
-W $7B56,2,2,2,2,2 #TRACESCREEN
-W $7B90,2,2,2,2,2 #TRACESCREEN
-W $7BD2,2,2,2,2,2 #TRACESCREEN
-
-B $7C0C Object?
-B $7C21 Object?
-B $7C2A Object?
-W $7C2E,2,2,2,2,2 #TRACESCREEN
-W $7C6D,2,2,2,2,2 #TRACESCREEN
-W $7C9C,2,2,2,2,2 #TRACESCREEN
-W $7D5A,2,2,2,2,2 #TRACESCREEN
-W $7DA9,2,2,2,2,2 #TRACESCREEN
-W $7E05,2,2,2,2,2 #TRACESCREEN
-W $7E8C,2,2,2,2,2 #TRACESCREEN
-W $7EF2,2,2,2,2,2 #TRACESCREEN
-W $7F48,2,2,2,2,2 #TRACESCREEN
-W $7F9C,2,2,2,2,2 #TRACESCREEN
-W $7FC4,2,2,2,2,2 #TRACESCREEN
-W $8008,2,2,2,2,2 #TRACESCREEN
-W $8076,2,2,2,2,2 #TRACESCREEN
-W $80A7,2,2,2,2,2 #TRACESCREEN
-W $80F6,2,2,2,2,2 #TRACESCREEN
-W $8162,2,2,2,2,2 #TRACESCREEN
-W $81E5,2,2,2,2,2 #TRACESCREEN
-W $8238,2,2,2,2,2 #TRACESCREEN
-W $8279,2,2,2,2,2 #TRACESCREEN
-W $82DD,2,2,2,2,2 #TRACESCREEN
-W $8321,2,2,2,2,2 #TRACESCREEN
-W $8384,2,2,2,2,2 #TRACESCREEN
-W $83ED,2,2,2,2,2 #TRACESCREEN
-W $844E,2,2,2,2,2 #TRACESCREEN
-B $849B
-W $84A8,2,2,2,2,2 #TRACESCREEN
-B $84DF
-W $84EE,2,2,2,2,2 #TRACESCREEN
-W $8526,2,2,2,2,2 #TRACESCREEN
-B $8576
-W $858F,2,2,2,2,2 #TRACESCREEN
-W $85BD,2,2,2,2,2 #TRACESCREEN
-W $8608,2,2,2,2,2 #TRACESCREEN
-W $8689,2,2,2,2,2 #TRACESCREEN
-B $86F5
-W $86FD,2,2,2,2,2 #TRACESCREEN
-W $8739,2,2,2,2,2 #TRACESCREEN
-W $8799,2,2,2,2,2 #TRACESCREEN
-W $8802,2,2,2,2,2 #TRACESCREEN
-W $8834,2,2,2,2,2 #TRACESCREEN
-W $889F,2,2,2,2,2 #TRACESCREEN
-W $890E,2,2,2,2,2 #TRACESCREEN
-W $8953,2,2,2,2,2 #TRACESCREEN
-W $89B9,2,2,2,2,2 #TRACESCREEN
-W $8A2D,2,2,2,2,2 #TRACESCREEN
-W $8A81,2,2,2,2,2 #TRACESCREEN
-W $8AF4,2,2,2,2,2 #TRACESCREEN
-W $8B25,2,2,2,2,2 #TRACESCREEN
-W $8B71,2,2,2,2,2 #TRACESCREEN
-W $8BAB,2,2,2,2,2 #TRACESCREEN
-W $8BF0,2,2,2,2,2 #TRACESCREEN
-W $8C5A,2,2,2,2,2 #TRACESCREEN
-W $8CC8,2,2,2,2,2 #TRACESCREEN
-W $8D18,2,2,2,2,2 #TRACESCREEN
-W $8D5C,2,2,2,2,2 #TRACESCREEN
-W $8DCA,2,2,2,2,2 #TRACESCREEN
-W $8E9C,2,2,2,2,2 #TRACESCREEN
-W $8EE1,2,2,2,2,2 #TRACESCREEN
-W $8F20,2,2,2,2,2 #TRACESCREEN
-W $8F84,2,2,2,2,2 #TRACESCREEN
-W $8FBD,2,2,2,2,2 #TRACESCREEN
-W $9005,2,2,2,2,2 #TRACESCREEN
-W $9053,2,2,2,2,2 #TRACESCREEN
-W $909F,2,2,2,2,2 #TRACESCREEN
-W $90DB,2,2,2,2,2 #TRACESCREEN
-W $913F,2,2,2,2,2 #TRACESCREEN
-W $91BA,2,2,2,2,2 #TRACESCREEN
-W $920A,2,2,2,2,2 #TRACESCREEN
-W $92A7,2,2,2,2,2 #TRACESCREEN
-W $92EF,2,2,2,2,2 #TRACESCREEN
-W $924E,2,2,2,2,2 #TRACESCREEN
-W $9376,2,2,2,2,2 #TRACESCREEN
-W $93DF,2,2,2,2,2 #TRACESCREEN
-W $9431,2,2,2,2,2 #TRACESCREEN
-W $9451,2,2,2,2,2 #TRACESCREEN
-W $947C,2,2,2,2,2 #TRACESCREEN
-W $94AB,2,2,2,2,2 #TRACESCREEN
-W $94CF,2,2,2,2,2 #TRACESCREEN
-W $9552,2,2,2,2,2 #TRACESCREEN
-W $95D6,2,2,2,2,2 #TRACESCREEN
-W $95F8,2,2,2,2,2 #TRACESCREEN
-W $9634,2,2,2,2,2 #TRACESCREEN
-W $968A,2,2,2,2,2 #TRACESCREEN
-W $96CC,2,2,2,2,2 #TRACESCREEN
-W $96F3,2,2,2,2,2 #TRACESCREEN
-W $9715,2,2,2,2,2 #TRACESCREEN
-W $9739,2,2,2,2,2 #TRACESCREEN
-W $976E,2,2,2,2,2 #TRACESCREEN
-W $97A6,2,2,2,2,2 #TRACESCREEN
-W $97F8,2,2,2,2,2 #TRACESCREEN
-W $982B,2,2,2,2,2 #TRACESCREEN
-W $9876,2,2,2,2,2 #TRACESCREEN
-W $98C0,2,2,2,2,2 #TRACESCREEN
-W $990D,2,2,2,2,2 #TRACESCREEN
-W $99A6,2,2,2,2,2 #TRACESCREEN
-W $9A1E,2,2,2,2,2 #TRACESCREEN
-W $9A5A,2,2,2,2,2 #TRACESCREEN
-W $9A9A,2,2,2,2,2 #TRACESCREEN
-W $9ADC,2,2,2,2,2 #TRACESCREEN
-W $9B19,2,2,2,2,2 #TRACESCREEN
-W $9B51,2,2,2,2,2 #TRACESCREEN
-W $9B9D,2,2,2,2,2 #TRACESCREEN
-W $9BE7,2,2,2,2,2 #TRACESCREEN
-c $9C44 Routine at 9C44
+;D $791E #BUILDMAP
+;M $791E,102 #TRACESCREEN
+M $791E,102 This comment covers the following 3 sub-blocks  #TRACESCREEN
+W $791E,12,4,2
+B $792A,90,2,6,5*2,6,5*5,7*5,5,1
+B $7984,65,1
+;M $791E,102 #TRACESCREEN
+;W $791E,12,4,2 #TRACESCREEN
+;B $792A,90,2,6,5,5,6,5,5,5,5,5,7,7,7,7,7,5,1
+B $7984,66
+M $79C6,81 RTrestING1 #TRACESCREEN!
+w $79C6,12,4,2
+b $79D2,69,2,6,6,5,7,6,5,7,4,5,7,4,4,1
+M $7A17,94 rest2 #TRACESCREEN !
+W $7A17,12,4,2
+B $7A23,82,2,5,5,6,6,5,5,5,4,5,5,7,7,7,7,1
+M $7A75,41 #TRACESCREEN
+W $7A75,12,4,2
+B $7A81,29,2,5,6,7,4,4,1
+M $7A9E,47 #TRACESCREEN
+W $7A9E,12,4,2
+B $7AAA,35,2,5,6,7,7,7,1
+M $7ACD,43 #TRACESCREEN
+W $7ACD,12,4,2
+B $7AD9,31,2,6,5,5,5,7,1
+M $7AF8,87 #TRACESCREEN
+W $7AF8,12,4,2
+B $7B04,75,2,6,5,7,5,5,5,7,5,5,4,4,7,7,1
+B $7B4F,7
+M $7B56,58 #TRACESCREEN
+W $7B56,12,4,2
+B $7B62,46,2,6,6,5,5,7,7,7,1
+M $7B90,66 #TRACESCREEN
+W $7B90,12,4,2
+B $7B9C,54,2,6,5,4,5,6,6,5,7,7,1
+M $7BD2,58 #TRACESCREEN
+W $7BD2,12,4,2
+B $7BDE,46,2,6,5,4,7,7,7,7,1
+B $7C0C,34
+M $7C2E,63 #TRACESCREEN
+W $7C2E,12,4,2
+B $7C3A,51,2,6,6,6,4,5,7,7,7,1
+M $7C6D,45 #TRACESCREEN
+W $7C6D,12,4,2
+B $7C79,33,2,7,6,5,5,7,1
+B $7C9A,2
+M $7C9C,73 #TRACESCREEN
+W $7C9C,12,4,2
+B $7CA8,61,2,5,6,6,6,7,7,7,7,7,1
+B $7CE5,117
+M $7D5A,79 #TRACESCREEN
+W $7D5A,12,4,2
+B $7D66,67,2,6,7,5,5,6,5,7,7,4,5,7,1
+M $7DA9,92 #TRACESCREEN
+W $7DA9,12,4,2
+B $7DB5,80,2,5,5,6,5,7,7,7,7,7,7,7,7,1
+M $7E05,118 #TRACESCREEN
+W $7E05,12,4,2
+B $7E11,106,5,7,7,7,7,5,7,7,7,7,7,7,7,7,5,6,1
+B $7E7B,17
+M $7E8C,102 #TRACESCREEN
+W $7E8C,12,4,2
+B $7E98,90,2,5,5,7,7,7,7,7,7,7,7,7,7,7,1
+M $7EF2,86 #TRACESCREEN
+W $7EF2,12,4,2
+B $7EFE,74,2,5,5,5,7,7,7,7,7,7,7,7,1
+M $7F48,84 #TRACESCREEN
+W $7F48,12,4,2
+B $7F54,72,2,6,6,5,5,7,7,5,7,7,7,7,1
+M $7F9C,40 #TRACESCREEN
+W $7F9C,12,4,2
+B $7FA8,28,2,6,5,7,7,1
+M $7FC4,68 #TRACESCREEN
+W $7FC4,12,4,2
+B $7FD0,56,2,6,5,5,7,5,5,6,7,7,1
+M $8008,110 #TRACESCREEN
+W $8008,12,4,2
+B $8014,98,2,5,5,6,6,5,7,7,7,7,7,7,7,7,7,5,1
+M $8076,49 #TRACESCREEN
+W $8076,12,4,2
+B $8082,37,2,5,5,5,5,7,7,1
+M $80A7,79 #TRACESCREEN
+W $80A7,12,4,2
+B $80B3,67,5,5,7,7,7,7,7,7,7,7,1
+M $80F6,108 #TRACESCREEN
+W $80F6,12,4,2
+B $8102,96,5,6,7,7,7,7,7,7,7,7,7,7,7,7,1
+M $8162,129 #TRACESCREEN
+W $8162,12,4,2
+B $816E,117,6,5,5,5,5,7,7,7,7,7,7,7,7,4,5,4,5,4,5,7,1
+B $81E3,2
+M $81E5,83 #TRACESCREEN
+W $81E5,12,4,2
+B $81F1,71,6,6,5,5,5,5,5,4,4,5,5,5,5,5,1
+M $8238,65 #TRACESCREEN
+W $8238,12,4,2
+B $8244,53,2,6,5,7,7,7,4,4,5,5,1
+M $8279,100 #TRACESCREEN
+W $8279,12,4,2
+B $8285,88,7,5,5,5,5,7,7,7,7,7,7,7,7,4,1
+M $82DD,68 #TRACESCREEN
+W $82DD,12,4,2
+B $82E9,56,5,5,5,5,7,7,7,7,7,1
+M $8321,99 #TRACESCREEN
+W $8321,12,4,2
+B $832D,87,5,7,6,5,7,7,7,7,7,7,7,7,7,1
+M $8384,105 #TRACESCREEN
+W $8384,12,4,2
+B $8390,93,2,6,5,6,5,7,7,7,7,5,7,7,7,7,7,1
+M $83ED,97 #TRACESCREEN
+W $83ED,12,4,2
+B $83F9,85,5,7,7,6,5,5,7,7,7,7,7,7,7,1
+M $844E,78 #TRACESCREEN
+W $844E,12,4,2
+B $845A,66,5,5,6,5,7,7,7,3,3,3,7,7,1
+B $849C,12
+M $84A8,55 #TRACESCREEN
+W $84A8,12,4,2
+B $84B4,43,6,6,5,5,3,3,7,7,1
+B $84DF,15
+M $84EE,56 #TRACESCREEN
+W $84EE,12,4,2
+B $84FA,44,6,6,7,3,3,3,3,3,3,3,3,1
+M $8526,81 #TRACESCREEN
+W $8526,12,4,2
+B $8532,69,7,7,5,7,3,3,3,7,7,7,7,5,1
+B $8577,24
+M $858F,46 #TRACESCREEN
+W $858F,12,4,2
+B $859B,34,5,7,7,7,7,1
+M $85BD,75 #TRACESCREEN
+W $85BD,12,4,2
+B $85C9,63,5,6,5,7,3,3,3,3,3,3,3,3,3,3,3,3,3,1
+M $8608,129 #TRACESCREEN
+W $8608,12,4,2
+B $8614,117,5,5,5,7,5,7,7,7,7,7,3,7,7,7,3,3,3,3,3,3,3,3,3,3,1
+M $8689,108 #TRACESCREEN
+W $8689,12,4,2
+B $8695,96,5,6,7,7,7,7,7,7,7,7,7,7,7,7,1
+B $86F5,8
+M $86FD,60 #TRACESCREEN
+W $86FD,12,4,2
+B $8709,48,5,5,5,6,7,7,3,3,3,3,1
+M $8739,80 #TRACESCREEN
+W $8739,12,4,2
+B $8745,68,5,5,5,5,5,7,7,7,7,7,7,1
+B $8789,16
+M $8799,105 #TRACESCREEN
+W $8799,12,4,2
+B $87A5,93,5,5,5,5,5,5,7,6,6,5,5,5,7,7,7,7,1
+M $8802,50 #TRACESCREEN
+W $8802,12,4,2
+B $880E,38,5,5,6,5,3,3,3,7,1
+M $8834,100 #TRACESCREEN
+W $8834,12,4,2
+B $8840,88,5,5,5,5,5,7,4,7,7,5,7,5,5,5,5,5,1
+B $8898,7
+M $889F,111 #TRACESCREEN
+W $889F,12,4,2
+B $88AB,99,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,7,7,1
+M $890E,69 #TRACESCREEN
+W $890E,12,4,2
+B $891A,57,5,5,5,5,7,5,5,5,5,5,4,1
+M $8953,102 #TRACESCREEN
+W $8953,12,4,2
+B $895F,90,5,5,5,5,5,5,5,5,7,7,5,5,5,5,5,5,5,1
+M $89B9,116 #TRACESCREEN
+W $89B9,12,4,2
+B $89C5,104,4,4,5,5,5,5,5,5,7,7,7,5,5,5,5,7,7,5,5,1
+M $8A2D,84 #TRACESCREEN
+W $8A2D,12,4,2
+B $8A39,72,5,5,5,5,5,5,5,7,5,5,5,7,7,1
+M $8A81,115 #TRACESCREEN
+W $8A81,12,4,2
+B $8A8D,103,5,5,5,5,5,7,7,7,5,5,5,5,5,7,5,5,7,7,1
+M $8AF4,49 #TRACESCREEN
+W $8AF4,12,4,2
+B $8B00,37,5,5,5,5,7,5,4,1
+M $8B25,76 #TRACESCREEN
+W $8B25,12,4,2
+B $8B31,64,5,5,7,7,7,7,7,7,5,6,1
+M $8B71,58 #TRACESCREEN
+W $8B71,12,4,2
+B $8B7D,46,5,5,7,7,7,7,7,1
+M $8BAB,69 #TRACESCREEN
+W $8BAB,12,4,2
+B $8BB7,57,5,6,5,5,7,7,7,7,7,1
+M $8BF0,106 #TRACESCREEN
+W $8BF0,12,4,2
+B $8BFC,94,5,5,5,5,5,5,5,5,6,5,7,7,5,4,5,4,5,5,1
+M $8C5A,110 #TRACESCREEN
+W $8C5A,12,4,2
+B $8C66,98,5,5,5,5,5,5,5,5,6,5,7,5,5,4,5,5,5,5,5,1
+M $8CC8,80 #TRACESCREEN
+W $8CC8,12,4,2
+B $8CD4,68,5,5,5,5,5,5,6,5,5,7,7,7,1
+M $8D18,68 #TRACESCREEN
+W $8D18,12,4,2
+B $8D24,56,5,5,5,5,6,7,5,5,5,7,1
+M $8D5C,110 #TRACESCREEN
+W $8D5C,12,4,2
+B $8D68,98,2,5,6,5,5,6,5,7,7,7,7,7,7,7,5,4,5,1
+M $8DCA,125 #TRACESCREEN
+W $8DCA,12,4,2
+B $8DD6,113,2,5,6,5,5,5,5,4,6,4,5,7,7,7,7,7,5,7,7,6,1
+B $8E47,85
+M $8E9C,69 #TRACESCREEN
+W $8E9C,12,4,2
+B $8EA8,57,5,5,5,5,5,5,5,5,5,5,6,1
+M $8EE1,63 #TRACESCREEN
+W $8EE1,12,4,2
+B $8EED,51,5,5,4,4,6,6,5,5,5,5,1
+M $8F20,100 #TRACESCREEN
+W $8F20,12,4,2
+B $8F2C,88,5,5,4,4,5,5,6,6,7,6,5,7,7,5,5,5,1
+M $8F84,57 #TRACESCREEN
+W $8F84,12,4,2
+B $8F90,45,2,6,5,6,4,7,7,7,1
+M $8FBD,72 #TRACESCREEN
+W $8FBD,12,4,2
+B $8FC9,60,6,6,5,5,5,4,4,5,5,7,7,1
+M $9005,78 #TRACESCREEN
+W $9005,12,4,2
+B $9011,66,5,7,7,7,4,5,6,5,5,7,7,1
+M $9053,76 #TRACESCREEN
+W $9053,12,4,2
+B $905F,64,6,6,5,5,5,7,7,6,6,5,5,1
+M $909F,60 #TRACESCREEN
+W $909F,12,4,2
+B $90AB,48,5,5,6,5,5,7,7,7,1
+M $90DB,100 #TRACESCREEN
+W $90DB,12,4,2
+B $90E7,88,2,6,5,5,6,5,5,7,7,4,5,4,5,7,7,7,1
+M $913F,123 #TRACESCREEN
+W $913F,12,4,2
+B $914B,111,5,5,5,6,5,7,7,7,7,7,7,7,7,7,7,7,7,1
+M $91BA,80 #TRACESCREEN
+W $91BA,12,4,2
+B $91C6,68,5,4,5,6,5,7,5,7,7,7,3,3,3,1
+M $920A,68 #TRACESCREEN
+W $920A,12,4,2
+B $9216,56,5,7,7,3,3,3,3,3,7,7,7,1
+M $924E,89 #TRACESCREEN
+W $924E,12,4,2
+B $925A,77,5,7,5,7,7,7,7,7,3,3,3,3,3,3,3,3,1
+M $92A7,72 #TRACESCREEN
+W $92A7,12,4,2
+B $92B3,60,5,7,5,7,7,7,7,7,7,1
+M $92EF,131 #TRACESCREEN
+W $92EF,12,4,2
+B $92FB,119,2,6,6,6,5,4,5,7,7,7,7,7,7,7,7,7,7,7,7,1
+B $9372,4
+M $9376,105 #TRACESCREEN
+W $9376,12,4,2
+B $9382,93,2,6,6,5,5,6,5,7,7,7,5,5,5,7,7,7,1
+M $93DF,82 #TRACESCREEN
+W $93DF,12,4,2
+B $93EB,70,2,6,5,5,5,5,5,5,7,5,5,7,7,1
+M $9431,32 #TRACESCREEN
+W $9431,12,4,2
+B $943D,20,2,7,5,5,1
+M $9451,43 #TRACESCREEN
+W $9451,12,4,2
+B $945D,31,2,7,5,5,6,5,1
+M $947C,47 #TRACESCREEN
+W $947C,12,4,2
+B $9488,35,2,6,6,5,5,5,5,1
+M $94AB,36 #TRACESCREEN
+W $94AB,12,4,2
+B $94B7,24,2,6,6,4,5,1
+M $94CF,89 #TRACESCREEN
+W $94CF,12,4,2
+B $94DB,77,5,6,6,4,4,6,7,5,5,7,7,7,7,1
+B $9528,42
+M $9552,96 #TRACESCREEN
+W $9552,12,4,2
+B $955E,84,5,6,6,4,4,6,7,7,5,5,7,7,7,7,1
+B $95B2,36
+M $95D6,34 #TRACESCREEN
+W $95D6,12,4,2
+B $95E2,22,5,6,5,5,1
+M $95F8,60 #TRACESCREEN
+W $95F8,12,4,2
+B $9604,48,2,6,5,5,5,5,5,7,7,1
+M $9634,82 #TRACESCREEN
+W $9634,12,4,2
+B $9640,70,6,6,5,4,5,7,7,5,5,5,7,7,1
+B $9686,4
+M $968A,66 #TRACESCREEN
+W $968A,12,4,2
+B $9696,54,6,5,6,5,5,5,7,7,7,1
+M $96CC,39 #TRACESCREEN
+W $96CC,12,4,2
+B $96D8,27,5,6,5,5,5,1
+M $96F3,34 #TRACESCREEN
+W $96F3,12,4,2
+B $96FF,22,6,5,5,5,1
+M $9715,36 #TRACESCREEN
+W $9715,12,4,2
+B $9721,24,6,7,5,5,1
+M $9739,53 #TRACESCREEN
+W $9739,12,4,2
+B $9745,41,6,5,5,5,5,7,7,1
+M $976E,56 #TRACESCREEN
+W $976E,12,4,2
+B $977A,44,2,6,6,5,5,5,5,5,4,1
+M $97A6,82 #TRACESCREEN
+W $97A6,12,4,2
+B $97B2,70,6,5,5,7,6,4,4,5,7,7,7,6,1
+M $97F8,51 #TRACESCREEN
+W $97F8,12,4,2
+B $9804,39,2,6,6,5,5,7,7,1
+M $982B,75 #TRACESCREEN
+W $982B,12,4,2
+B $9837,63,2,6,6,5,5,5,5,7,7,7,7,1
+M $9876,74 #TRACESCREEN
+W $9876,12,4,2
+B $9882,62,2,6,6,6,5,5,5,5,7,7,7,1
+M $98C0,65 #TRACESCREEN
+W $98C0,12,4,2
+B $98CC,53,5,5,7,7,7,7,7,7,1
+B $9901,12
+M $990D,138 #TRACESCREEN
+W $990D,12,4,2
+B $9919,126,6,6,6,5,7,7,7,6,5,7,7,7,7,7,7,7,7,7,7,1
+B $9997,15
+M $99A6,120 #TRACESCREEN
+W $99A6,12,4,2
+B $99B2,108,5,5,5,6,6,4,7,6,7,7,7,7,7,7,7,7,7,1
+M $9A1E,60 #TRACESCREEN
+W $9A1E,12,4,2
+B $9A2A,48,2,6,6,5,6,5,7,5,5,1
+M $9A5A,64 #TRACESCREEN
+W $9A5A,12,4,2
+B $9A66,52,2,6,6,5,6,5,7,7,7,1
+M $9A9A,66 #TRACESCREEN
+W $9A9A,12,4,2
+B $9AA6,54,5,5,6,4,5,7,7,7,7,1
+M $9ADC,61 #TRACESCREEN
+W $9ADC,12,4,2
+B $9AE8,49,2,6,6,5,7,5,5,5,7,1
+M $9B19,56 #TRACESCREEN
+W $9B19,12,4,2
+B $9B25,44,6,6,7,5,5,7,7,1
+M $9B51,76 #TRACESCREEN
+W $9B51,12,4,2
+B $9B5D,64,2,6,5,5,7,7,7,3,7,7,7,1
+M $9B9D,74 #TRACESCREEN
+W $9B9D,12,4,2
+B $9BA9,62,2,6,6,7,7,7,7,7,3,3,3,3,1
+M $9BE7,82 #TRACESCREEN
+W $9BE7,12,4,2
+B $9BF3,70,6,6,5,5,5,6,5,7,7,5,7,5,1
+B $9C39
+B $9C43,1,1
+С $9C44 Routine at 9C44
 D $9C44 Used by the routines at #R$B452, #R$B458 and #R$B47A.
-c $9CA8 Routine at 9CA8
+С $9CA8 Routine at 9CA8
 D $9CA8 Used by the routine at #R$9C44.
 N $9D31 This entry point is used by the routine at #R$9C44.
 N $9D34 This entry point is used by the routine at #R$9D8B.
 N $9D58 This entry point is used by the routine at #R$9D75.
-c $9D5C Routine at 9D5C
+С $9D5C Routine at 9D5C
 D $9D5C Used by the routines at #R$9C44 and #R$9CA8.
-c $9D75 Routine at 9D75
+С $9D75 Routine at 9D75
 D $9D75 Used by the routine at #R$9CA8.
-c $9D8B Routine at 9D8B
+С $9D8B Routine at 9D8B
 D $9D8B Used by the routine at #R$9CA8.
-c $9DCD Routine at 9DCD
+С $9DCD Routine at 9DCD
 D $9DCD Used by the routines at #R$A154, #R$A15F, #R$A1A6, #R$A1B5, #R$A1C0, #R$A1CB, #R$A1D6, #R$A353 and #R$B42E.
-c $9DD9 Routine at 9DD9
+С $9DD9 Routine at 9DD9
 D $9DD9 Used by the routines at #R$9CA8, #R$9DF1, #R$A434, #R$B937, #R$BC55, #R$C22F, #R$C4F6, #R$C50D, #R$C5C6 and #R$FA31.
-c $9DDA Routine at 9DDA
+N $9DDA Routine at 9DDA
+С $9DDA Routine at 9DDA
 b $9DEF Data block at 9DEF
 B $9DEF,2,2
-c $9DF1 Routine at 9DF1
+С $9DF1 Routine at 9DF1
 D $9DF1 Used by the routine at #R$9DDA.
-b $9DF5 Background Games Screen Data 2
-B $9DF5 Background Games Screen Data 2
-W $9DF5,2,2,2,2,2 #TRACESCREEN
-W $9E22,2,2,2,2,2 #TRACESCREEN
-W $9E73,2,2,2,2,2 #TRACESCREEN$9E73,$f700,$6590
-W $9EB8,2,2,2,2,2 #TRACESCREEN$9EB8,$f700,$6590
-W $9ED9,2,2,2,2,2 #TRACESCREEN$9ED9,$f700,$6590
-W $9EFA,2,2,2,2,2 #TRACESCREEN$9EFA,$f700,$6590
-W $9F3A,2,2,2,2,2 #TRACESCREEN$9F3A,$f700,$6590
-W $9F7E,2,2,2,2,2 #TRACESCREEN$9F7E,$f700,$6590
-W $A022,2,2,2,2,2 #TRACESCREEN$A022,$f700,$6590
-c $A0DF Routine at A0DF
+M $9DF5,45 #TRACESCREEN
+W $9DF5,12,4,2
+B $9E01,33,5,6,5,7,4,5,1
+M $9E22,81 #TRACESCREEN
+W $9E22,12,4,2
+B $9E2E,69,2,6,6,5,7,7,7,7,7,7,7,1
+M $9E73,69 #TRACESCREEN
+W $9E73,12,4,2
+B $9E7F,57,5,6,6,5,5,5,5,5,7,7,1
+M $9EB8,33 #TRACESCREEN
+W $9EB8,12,4,2
+B $9EC4,21,5,5,5,5,1
+M $9ED9,33 #TRACESCREEN
+W $9ED9,12,4,2
+B $9EE5,21,5,5,5,5,1
+M $9EFA,64 #TRACESCREEN
+W $9EFA,12,4,2
+B $9F06,52,5,6,6,5,5,5,5,7,7,1
+M $9F3A,68 #TRACESCREEN
+W $9F3A,12,4,2
+B $9F46,56,6,5,6,7,7,5,5,7,7,1
+M $9F7E,134 #TRACESCREEN
+W $9F7E,12,4,2
+B $9F8A,122,6,6,7,6,6,7,7,7,7,7,7,7,6,6,7,4,5,7,6,1
+B $A004,30
+M $A022,133 #TRACESCREEN
+W $A022,12,4,2
+B $A02E,121,6,6,6,7,7,7,7,7,7,7,6,6,7,4,5,7,6,5,7,1
+С $A0DF Routine at A0DF
 N $A0E2 This entry point is used by the routines at #R$A0E8, #R$A0ED, #R$A0F2, #R$A0F7, #R$A0FC, #R$A101, #R$A106, #R$A10B, #R$A110, #R$A115, #R$A11F, #R$A124 and #R$A129.
 N $A0E5 This entry point is used by the routine at #R$A142.
 c $A0E8 Routine at A0E8
@@ -366,15 +614,14 @@ c $A418 Routine at A418
 D $A418 Used by the routine at #R$A434.
 c $A434 Routine at A434
 D $A434 Used by the routines at #R$B44C and #R$B458.
-C $A451 A *= 2
-C $A452 selfmodifing code: changing IX+...
-C $A456 selfmodifing code: changing IX+...
-C $A45D index modifing by #R$A452
-C $A460 index modifing by #R$A456
+C $A451,1 A *= 2
+C $A452,4 selfmodifing code: changing IX+...
+C $A456,7 selfmodifing code: changing IX+...
+C $A45D,3 index modifing by #R$A452
+C $A460,671 index modifing by #R$A456
 N $A6FF This entry point is used by the routines at #R$A3B5, #R$A3D1, #R$A3EE and #R$A418.
 b $A747 Data block at A747
-W $A747
-
+W $A747,20,2
 c $A75B Routine at A75B
 D $A75B Used by the routine at #R$A434.
 c $A775 Routine at A775
@@ -449,12 +696,12 @@ T $AD58,1,1
 t $AD59 Other gameplay text
 T $AD59,12,12
 b $AD65 Base gamescreen Layout
-B $AD65,157,8*19,5 #SMAP$AD65,$AE02
+B $AD65,157,9*17,4 #SMAP$AD65,$AE02
 b $AE02 Base game Screen Sprites
-D $AE02 #UDGTABLE { #FOR$AE02,$AED1,9//n/#UDG(n,#PEEK(n+8),5)/ | // } TABLE#
-B $AE02,198,8*24,6
-;b $AEC8 Data block at AEC8
-;B $AEC8,9,8,1
+D $AE02 #UDGTABLE { #FOR$AE02,$AEBF,9//n/#UDG(n,#PEEK(n+8),5)/ | // } TABLE#
+B $AE02,198,5,4,5,4,5,4,5,4,5,4,9
+b $AEC8 Data block at AEC8
+B $AEC8,9,8,1
 c $AED1 Put String to Screen
 D $AED1 Used by the routines at #R$ACCA, #R$AEF0, #R$AF9C, #R$B040, #R$B4DE, #R$B724, #R$BEB3, #R$BFD5, #R$DEC1, #R$DF37, #R$E097 and #R$E2A7.
 R $AED1 C Length
@@ -511,11 +758,7 @@ N $B350 This entry point is used by the routines at #R$B320, #R$B32A, #R$B334 an
 c $B368 Routine at B368
 c $B371 Routine at B371
 D $B371 Used by the routine at #R$BC55.
-c $B38F Puts 3x3 data from $7C21 to (HL+2)
-C $B38F,7 Stack -> HL, HL+=2, HL->Stack (HL)->HL
-C $B399,2 Rows count = 3
-C $B39B,2 Columns count = 3
-C $B3A3,6 HL+=30-3 (width = 30 characters. 30-3 = 27 = 0x1b)
+c $B38F Routine at B38F
 s $B3AF Unused
 S $B3AF,1,$01
 c $B3B0 Routine at B3B0
@@ -550,8 +793,8 @@ D $B4DE Used by the routines at #R$B724, #R$B937, #R$BC55, #R$BDB2, #R$BFD5 and 
 c $B4FA Routine at B4FA
 D $B4FA Used by the routine at #R$B446.
 b $B513 Data Block at B513
-W $B513,2
-W $B515,2
+W $B513,4,2
+B $B517,27,8*3,3
 c $B532 Routine at B532
 s $B595 Unused
 S $B595,1,$01
@@ -575,22 +818,21 @@ N $B6EE This entry point is used by the routine at #R$B702.
 c $B702 Routine at B702
 D $B702 Used by the routine at #R$734A.
 b $B706 Reference links to different element routines
-W $B706,2 0: Take HL from Stack then: Puts 9 bytes from $7c21 to buffer[HL[1..2]] (3x3 square)
-W $B708,2 1: Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x1e step (vertical)
-W $B70A,2 2: Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x01 step (horizontal)
-W $B70C,2 3: Take HL from Stack then: Fill Square by HL(1) HL(2)xHL(3) to HL(4..5)
-W $B70E,2 4: Take HL from Stack then: Fill [$6590..6590+0x1FE] with HL(1) and puts HL to Stack
-W $B710,2 5: Take HL from Stack then: HL(1)xHL(2) data copied from HL(3..4) to HL(5..6)
-W $B712,2 6: Take HL from Stack then: HL(2) Size of right-to-bottom triangle by (hl+1) started at (HL3..4) wide top
-W $B714,2 7: Take HL from Stack then: HL(2) Size of right-to-bottom triangle by (hl+1) started at (HL3..4) wide bottom
-W $B716,2 8: Take HL from Stack then: HL(2) Size of left-to-bottom triangle by (hl+1) started at (HL3..4) wide bottom
-W $B718,2 9: Take HL from Stack then: HL(2) Size of left-to-bottom triangle by (hl+1) started at (HL3..4) wide top
-W $B71A,2 A: Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x1f step (diagonal to right)
-W $B71C,2 B: Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x1d step (diagonal to left)
-W $B71E,2 C: Take HL from Stack then: Fill Square HL(3)xHL(4) by data from HL(1..2) to HL(5..6)
-W $B720,2 D: Take HL from Stack then: Setborder hl(1)
-W $B722,2 E: Take HL from Stack then: (HL+1)->(HL3..4) 1 times
-
+W $B706,2,2 0: Take HL from Stack then: Put 9 bytes from $7c21 to HL(1..2) 3x3 square
+W $B708,2,2 1: Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x1e step (vertical)
+W $B70A,2,2 2: Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x01 step (horizontal)
+W $B70C,2,2 3: Take HL from Stack then: Fill Square by HL(1) HL(2)xHL(3) to HL(4..5)
+W $B70E,2,2 4: Take HL from Stack then: Fill [$6590..6590+0x1FE] with HL(1) and puts HL to Stack
+W $B710,2,2 5: Take HL from Stack then: HL(1)xHL(2) data copied from HL(3..4) to HL(5..6)
+W $B712,2,2 6: Take HL from Stack then: HL(2) Size of right-to-bottom triangle by (hl+1) started at (HL3..4) wide top
+W $B714,2,2 7: Take HL from Stack then: HL(2) Size of right-to-bottom triangle by (hl+1) started at (HL3..4) wide bottom
+W $B716,2,2 8: Take HL from Stack then: HL(2) Size of left-to-bottom triangle by (hl+1) started at (HL3..4) wide bottom
+W $B718,2,2 9: Take HL from Stack then: HL(2) Size of left-to-bottom triangle by (hl+1) started at (HL3..4) wide top
+W $B71A,2,2 A: Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x1f step (diagonal to right)
+W $B71C,2,2 B: Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x1d step (diagonal to left)
+W $B71E,2,2 C: Take HL from Stack then: Fill Square HL(3)xHL(4) by data from HL(1..2) to HL(5..6)
+W $B720,2,2 D: Take HL from Stack then: Setborder hl(1)
+W $B722,2,2 E: Take HL from Stack then: (HL+1)->(HL3..4) 1 times
 c $B724 Routine at B724
 D $B724 Used by the routines at #R$B422, #R$B425, #R$B42E, #R$C64C and #R$C681.
 N $B77B This entry point is used by the routine at #R$B937.
@@ -1564,13 +1806,15 @@ B $D57B,3,3
 t $D57E Message at D57E
 T $D57E,3,3
 b $D581 Data block at D581
+B $D581,127,8*15,7
 b $D600 MAP FOREGROND TILES
+B $D600,2152,17*6,2,8
 c $DE68 Routine at DE68
-C $DE6A #R$DE84 Data block $DE84
 D $DE68 Used by the routine at #R$B5C7.
+C $DE6A,26 #R$DE84 Data block $DE84
 b $DE84 Data block at DE84
-W $DE84,16,16,16 Data used by #R$DE68 routine
-B $DEAC
+W $DE84,40,16*2,8 Data used by #R$DE68 routine
+B $DEAC,21,8*2,5
 c $DEC1 Routine at DEC1
 D $DEC1 Used by the routines at #R$DF37, #R$E097 and #R$E2A7.
 C $DECD,3 Put String (HL) to (DE) Screen Position
@@ -1747,18 +1991,17 @@ B $E43B,5,5
 c $E440 Routine at E440
 D $E440 Used by the routines at #R$DF37, #R$E04D, #R$E097 and #R$E2A7.
 b $E494 Data block at E494
+B $E494,620,8*77,4
 b $E700 Game Sprites
-B $E700 #BWTILES$E700,0 #BWTILES$E700,1
 D $E700 #BWTILES$D700,0 #BWTILES$D700,1
 D $E700 #BWTILES$C700,0 #BWTILES$C700,1
 D $E700 #BWTILES$B700,0 #BWTILES$B700,1
 D $E700 #BWTILES$A700,0 #BWTILES$A700,1
 D $E700 #BWTILES$9700,0 #BWTILES$9700,1
 D $E700 #UDGTABLE { #FOR$D64E,$D700,17//n/#UDG(n,7,5)/ | // } TABLE#
-
-b $f700 Tiles
-;D $f700 #UDGTABLE { #FOR$F700,$fff4,9//n/#UDG(n,#PEEK(n+17),2)/ | // } TABLE#
-B $f700 #STILES$f700
+B $E700,4096,8 #BWTILES$E700,0 #BWTILES$E700,1
+b $F700 Tiles
+B $F700,531,8*66,3 #STILES$f700
 c $F913 Routine at F913
 D $F913 Used by the routine at #R$F9E7.
 c $F968 Routine at F968
@@ -1788,3 +2031,4 @@ D $FA28 Used by the routine at #R$BAD5.
 c $FA31 Routine at FA31
 D $FA31 Used by the routine at #R$A434.
 b $FA3A Data block at FA3A
+B $FA3A,1478,8*184,6

@@ -2,7 +2,6 @@ from skoolkit.skoolhtml import HtmlWriter
 from skoolkit.graphics import Frame, Udg
 from skoolkit.skoolmacro import parse_ints
 
-
 class SaboteurHtmlWriter(HtmlWriter):
     def __init__(self, skool_parser, ref_parser, file_info):
         super().__init__(skool_parser, ref_parser, file_info)
@@ -126,14 +125,14 @@ class SaboteurHtmlWriter(HtmlWriter):
                 x = x + 1
                 if x >= xmax:
                     lines.append(line)
-                    line=[]
-                    x=0
-                    y=y+1
+                    line = []
+                    x = 0
+                    y = y+1
             else:
                 cnt = c-0x14
                 c = self.snapshot[address]
                 address = address+1
-                c_address = c*9 + address2;
+                c_address = c*9 + address2
                 for i in range(cnt):
                     line.append(Udg(self.snapshot[c_address+8], self.snapshot[c_address:c_address+8]))
                     x = x + 1
@@ -153,7 +152,7 @@ class SaboteurHtmlWriter(HtmlWriter):
     def expand_stiles(self, text, index, cwd):
         end, address = parse_ints(text, index, 1)
         lines = []
-        for y in range (16):
+        for y in range(16):
             line = []
             for x in range(16):
                 c_address = address + (y*16+x)*9
@@ -169,11 +168,11 @@ class SaboteurHtmlWriter(HtmlWriter):
 
         lines = []
         swidth = 8
-        for y in range (32):
+        for y in range(32):
             line = []
             for x in range(swidth):
                 c_address = address + (y*swidth+x)*16
-                line.append(Udg(0x38, [self.snapshot[x+shift] for x in range(c_address,c_address+16,2)]))
+                line.append(Udg(0x38, [self.snapshot[x+shift] for x in range(c_address, c_address+16, 2)]))
             lines.append(line)
 
         #frame = Frame([[Udg(self.snapshot[address2+8], udg_data)]], 2)
@@ -396,10 +395,9 @@ class SaboteurHtmlWriter(HtmlWriter):
             drawlog += '<br>'
             cmdlen(address-s_cmdaddress)
         cmdres = '<br>M ${:04X},{} TRACESCR<br>W ${:04X},12,4,2<br>B ${:04X},{}'.format(cmdstart, address-cmdstart, cmdstart, cmdstart+12, address-cmdstart-12) + self.cmdlog
-        return drawlog,(cmdstart,address-cmdstart,cmdres)
+        return drawlog, (cmdstart, address-cmdstart, cmdres)
 
-
-    # #TRACESCRaddress,tileaddress,buffer_address
+    #TRACESCRaddress,tileaddress,buffer_address
     def expand_tracescreen(self, text, index, cwd):
         address = self.pc
         print('TraceScreen_{:04X}-{}'.format(address, len(self.RoomsList)))
