@@ -18,7 +18,7 @@ class SaboteurHtmlWriter(HtmlWriter):
         if address in self.RoomsList:
             return
         self.RoomsList.append(address)
-        self.drawGameScreen(address, 0x6590)
+        self.draw_game_screen(address, 0x6590)
         self.Rooms.append([x, y, [self.Memory[x] for x in range(0x6590, 0x6590 + 510)]])
 
         addressLeft, addressRight, addressUp, addressDown = \
@@ -174,37 +174,38 @@ class SaboteurHtmlWriter(HtmlWriter):
         fname = 'bwtiles{}_{}'.format(address, shift)
         return end, self.handle_image(frame, fname, cwd)
 
-    def drawGameScreen(self, address, bufaddress):
+    def draw_game_screen(self, address, buffer_address):
 
         def a2p(addr):
-            addr2 = addr - bufaddress
+            addr2 = addr - buffer_address
             mpage = addr2 // (17 * 30)
             if mpage > 0:
-                return 'P{}[{:}x{:}]=[{:04X}]'.format(mpage, addr2 % 30, ((addr2) // 30) % 17, addr2 + bufaddress)
-            return '{:}x{:}'.format((addr2) % 30, (addr2) // 30)
+                return 'P{}[{}x{}]=[{:04X}]'.format(mpage, addr2 % 30, ((addr2) // 30) % 17, addr2 + buffer_address)
+            return '{}x{}'.format((addr2) % 30, (addr2) // 30)
 
         def gaddr(ref_addr):
-            addr1 = self.Memory[ref_addr] + self.Memory[ref_addr + 1] * 256 - bufaddress
-            addr1 %= 30 * 17
-            addr1 += bufaddress
-            return addr1
-            return self.Memory[ref_addr] + self.Memory[ref_addr + 1] * 256 - bufaddress
+            # addr1 = self.Memory[ref_addr] + self.Memory[ref_addr + 1] * 256 - buffer_address
+            # addr1 %= 30 * 17
+            # addr1 += buffer_address
+            # return addr1
+            return (self.Memory[ref_addr] + self.Memory[ref_addr + 1] * 256 - buffer_address) % (30*17) + buffer_address
 
         for i in range(30 * 17):
-            self.Memory[bufaddress + i] = 0
+            self.Memory[buffer_address + i] = 0
 
         address += 12  ## shift to graphics cmds
 
         drawlog = ''
 
         ch = self.Memory[address]
+
         while ch != 255:
             drawlog += '{:04X} {:02X} '.format(address, self.Memory[address])
-            ch = self.Memory[address];
+            ch = self.Memory[address]
             address += 1
 
             if ch == 0:  ##Put 9 bytes from $7c21 to HL(1..2) 3x3 square
-                addr1 = gaddr(address);
+                addr1 = gaddr(address)
                 address += 2
                 for y in range(3):
                     for x in range(3):
@@ -223,15 +224,15 @@ class SaboteurHtmlWriter(HtmlWriter):
                 drawlog += 'Vertical line from ' + a2p(addr1) + ' by ${:02X} {} times'.format(c, cnt)
 
             elif ch == 2:  ##HL(1) times fill (HL3..4) by (HL+2) with 0x1 step (horizontal)
-                cnt = self.Memory[address];
+                cnt = self.Memory[address]
                 address += 1
-                c = self.Memory[address];
+                c = self.Memory[address]
                 address += 1
-                addr1 = gaddr(address);
+                addr1 = gaddr(address)
                 address += 2
                 for x in range(cnt):
                     self.Memory[addr1 + x] = c
-                drawlog += 'Horizontal line from ' + a2p(addr1) + ' by ${:02X} {} times'.format(c, cnt)
+                drawlog += 'Horizontal line from ' + a2p(addr1) + ' by ${:02X}, length: {}'.format(c, cnt)
 
             elif ch == 3:  ## Fill Square by HL(1) HL(2)xHL(3) to HL(4..5)
                 c = self.Memory[address];
@@ -248,20 +249,20 @@ class SaboteurHtmlWriter(HtmlWriter):
                 drawlog += 'Fill {}x{} by ${:02X} to '.format(xmax, ymax, c) + a2p(addr1)
 
             elif ch == 4:  ## Fill [$6590..6590+0x1FE] with HL(1) and puts HL to Stack
-                c = self.Memory[address];
+                c = self.Memory[address]
                 address += 1
                 for i in range(30 * 17):
-                    self.Memory[bufaddress + i] = c
+                    self.Memory[buffer_address + i] = c
                 drawlog += 'Clear by ${:02X}'.format(c)
 
             elif ch == 5:  ## HL(1)xHL(2) data copied from HL(3..4) to HL(5..6)
-                xmax = self.Memory[address];
+                xmax = self.Memory[address]
                 address += 1
-                ymax = self.Memory[address];
+                ymax = self.Memory[address]
                 address += 1
-                addr2 = self.Memory[address] + self.Memory[address + 1] * 256;
+                addr2 = self.Memory[address] + self.Memory[address + 1] * 256
                 address += 2
-                addr1 = gaddr(address);
+                addr1 = gaddr(address)
                 address += 2
                 for y in range(ymax):
                     for x in range(xmax):
@@ -270,11 +271,11 @@ class SaboteurHtmlWriter(HtmlWriter):
                                                                                      ymax) + a2p(addr1)
 
             elif ch == 6:  ## HL(2) Size of right-to-bottom triangle by (hl+1) started at (HL3..4) wide top
-                c = self.Memory[address];
+                c = self.Memory[address]
                 address += 1
-                size = self.Memory[address];
+                size = self.Memory[address]
                 address += 1
-                addr1 = gaddr(address);
+                addr1 = gaddr(address)
                 address += 2
                 for y in range(size):
                     for x in range(size - y):
@@ -282,11 +283,11 @@ class SaboteurHtmlWriter(HtmlWriter):
                 drawlog += 'Wide top to right triangle at' + a2p(addr1) + ' with {} size by ${:02X}'.format(size, c)
 
             elif ch == 7:  ## HL(2) Size of right-to-bottom triangle by (hl+1) started at (HL3..4) wide bottom
-                c = self.Memory[address];
+                c = self.Memory[address]
                 address += 1
-                size = self.Memory[address];
+                size = self.Memory[address]
                 address += 1
-                addr1 = gaddr(address);
+                addr1 = gaddr(address)
                 address += 2
                 for y in range(size):
                     for x in range(y + 1):
@@ -294,9 +295,9 @@ class SaboteurHtmlWriter(HtmlWriter):
                 drawlog += 'Wide bottom to right triangle at' + a2p(addr1) + ' with {} size by ${:02X}'.format(size, c)
 
             elif ch == 8:  ## HL(2) Size of left-to-bottom triangle by (hl+1) started at (HL3..4) wide bottom
-                c = self.Memory[address];
+                c = self.Memory[address]
                 address += 1
-                size = self.Memory[address];
+                size = self.Memory[address]
                 address += 1
                 addr1 = gaddr(address)
                 address += 2
@@ -306,11 +307,11 @@ class SaboteurHtmlWriter(HtmlWriter):
                 drawlog += 'Wide bottom to left triangle at' + a2p(addr1) + ' with {} size by ${:02X}'.format(size, c)
 
             elif ch == 9:  ## HL(2) Size of left-to-bottom triangle by (hl+1) started at (HL3..4) wide top
-                c = self.Memory[address];
+                c = self.Memory[address]
                 address += 1
-                size = self.Memory[address];
+                size = self.Memory[address]
                 address += 1
-                addr1 = gaddr(address);
+                addr1 = gaddr(address)
                 address += 2
                 for y in range(size):
                     for x in range(size - y):
@@ -318,57 +319,60 @@ class SaboteurHtmlWriter(HtmlWriter):
                 drawlog += 'Wide top to left triangle at' + a2p(addr1) + ' with {} size by ${:02X}'.format(size, c)
 
             elif ch == 0xA:  ## HL(1) times fill (HL3..4) by (HL+2) with 0x1f step (diagonal to right)
-                cnt = self.Memory[address];
+                cnt = self.Memory[address]
                 address += 1
-                c = self.Memory[address];
+                c = self.Memory[address]
                 address += 1
-                addr1 = gaddr(address);
+                addr1 = gaddr(address)
                 address += 2
                 for x in range(cnt):
                     self.Memory[addr1 + x * 0x1f] = c
                 drawlog += 'Diagonal line to right from ' + a2p(addr1) + ' by ${:02X} {} times'.format(c, cnt)
 
             elif ch == 0xB:  ## HL(1) times fill (HL3..4) by (HL+2) with 0x1d step (diagonal to left)
-                cnt = self.Memory[address];
+                cnt = self.Memory[address]
                 address += 1
-                c = self.Memory[address];
+                c = self.Memory[address]
                 address += 1
-                addr1 = gaddr(address);
+                addr1 = gaddr(address)
                 address += 2
                 for x in range(cnt):
                     self.Memory[addr1 + x * 0x1d] = c
                 drawlog += 'Diagonal line to left from ' + a2p(addr1) + ' by ${:02X} {} times'.format(c, cnt)
 
             elif ch == 0xC:  ## Fill Square HL(3)xHL(4) by same lines from HL(1..2) to HL(5..6)
-                addr2 = self.Memory[address] + self.Memory[address + 1] * 256;
+                addr2 = self.Memory[address] + self.Memory[address + 1] * 256
                 address += 2
-                xmax = self.Memory[address];
+                xmax = self.Memory[address]
                 address += 1
-                ymax = self.Memory[address];
+                ymax = self.Memory[address]
                 address += 1
-                addr1 = gaddr(address);
+                addr1 = gaddr(address)
                 address += 2
                 for y in range(ymax):
                     for x in range(xmax):
                         self.Memory[addr1 + x + y * 30] = self.Memory[addr2 + x]
-                drawlog += 'Fill {} lines width {} at '.format(ymax, xmax) + a2p(
-                    addr1) + ' by data from Array[{:04X}..{:04X}]'.format(addr2, addr2 + xmax)
+                drawlog += 'Fill {} lines width {} at '.format(ymax, xmax) + a2p(addr1) +\
+                           ' by data from Array[{:04X}..{:04X}]'.format(addr2, addr2 + xmax)
 
             elif ch == 0xD:  ## Setborder hl(1)
-                c = self.Memory[address];
+                c = self.Memory[address]
                 address += 1
                 drawlog += 'Set border color to ${:02X}'.format(c)
 
             elif ch == 0xE:  ## (HL+1)->(HL3..4) 1 times
-                c = self.Memory[address];
+                c = self.Memory[address]
                 address += 1
-                addr1 = gaddr(address);
+                addr1 = gaddr(address)
                 address += 2
                 self.Memory[addr1] = c
                 drawlog += 'Put ${:02X} to '.format(c) + a2p(addr1)
 
             elif ch == 0xff:
                 drawlog += ' The End'
+                for y in range(17):
+                    drawlog += '<br>' + '_'.join(['{:02X}'.format(self.Memory[buffer_address + x + y * 30]) for x in range(30)])
+
 
             else:
                 drawlog += ' Unknown CMD:Stop!'
@@ -377,15 +381,12 @@ class SaboteurHtmlWriter(HtmlWriter):
 
         return drawlog
 
-    #TRACESCRaddress,tileaddress,bufaddress
+    #TRACESCRaddress,tile_address,buffer_address
     def expand_tracescreen(self, text, index, cwd):
-        ##end, address, tileaddress, bufaddress = parse_ints(text, index, 3)
-        # end = text[index:]
-        ##end = []
 
         address = self.pc
-        tileaddress = 0xf700
-        bufaddress = 0x6590
+        tile_address = 0xf700
+        buffer_address = 0x6590
 
         self.Memory = self.snapshot
 
@@ -404,17 +405,20 @@ class SaboteurHtmlWriter(HtmlWriter):
         if addressDown > 0x4000:
             NavigatorString += 'Down: #R${:04X} '.format(addressDown)
 
-        drawlog = self.drawGameScreen(address, bufaddress)
+        draw_log = self.draw_game_screen(address, buffer_address)
 
         lines = []
         for y in range(17):
             line = []
             for x in range(30):
-                c_address = self.Memory[bufaddress + x + y * 30] * 9 + tileaddress
+                c_address = self.Memory[buffer_address + x + y * 30] * 9 + tile_address
                 line.append(Udg(self.Memory[c_address + 8], self.Memory[c_address:c_address + 8]))
             lines.append(line)
+
+
+
 
         # frame = Frame([[Udg(self.snapshot[address2+8], udg_data)]], 2)
         frame = Frame(udgs=lines, scale=3)
         frame_name = 'tracer_scr_{:04X}'.format(address)
-        return index, NavigatorString + '<br>' + drawlog + self.handle_image(frame, frame_name, cwd)
+        return index, NavigatorString + '<br>' + draw_log + self.handle_image(frame, frame_name, cwd)

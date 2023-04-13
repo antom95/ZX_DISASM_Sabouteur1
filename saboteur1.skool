@@ -1695,24 +1695,13 @@ b$791E DEFW $B446                           ; {#TRACESCREEN
  $7C04 DEFW $0205                           ;
  $7C06 DEFW $8403                           ;
  $7C08 DEFW $3C79                           ;
- $7C0A DEFW $FF67                           ;
- $7C0C DEFW $403F                           ;
- $7C0E DEFW $4241                           ;
- $7C10 DEFW $4443                           ;
- $7C12 DEFW $4645                           ;
- $7C14 DEFW $4847                           ;
- $7C16 DEFW $4A49                           ;
- $7C18 DEFW $4C4B                           ;
- $7C1A DEFW $454D                           ;
- $7C1C DEFW $4746                           ;
- $7C1E DEFW $4948                           ;
- $7C20 DEFW $144A                           ;
- $7C22 DEFW $1615                           ;
- $7C24 DEFW $1817                           ;
- $7C26 DEFW $1A19                           ;
- $7C28 DEFW $1C1B                           ;
- $7C2A DEFW $0906                           ;
- $7C2C DEFW $ECED                           ; }
+ $7C0A DEFW $FF67                           ; }
+ $7C0C DEFB $3F,$40,$41,$42,$43,$44,$45,$46 ; {Object?
+ $7C14 DEFB $47,$48,$49,$4A,$4B,$4C,$4D,$45 ;
+ $7C1C DEFB $46,$47,$48,$49,$4A             ; }
+ $7C21 DEFB $14,$15,$16,$17,$18,$19,$1A,$1B ; {Object?
+ $7C29 DEFB $1C                             ; }
+ $7C2A DEFB $06,$09,$ED,$EC                 ; Object?
  $7C2E DEFW $B458                           ; {#TRACESCREEN
  $7C30 DEFW $A1A6                           ;
  $7C32 DEFW $7D5A                           ;
@@ -7370,7 +7359,7 @@ b$AD65 DEFB $00,$32,$01,$02,$03,$32,$0B,$04 ; {#SMAP$AD65,$AE02
 ; Base game Screen Sprites
 ;
 ; #UDGTABLE
-; { #FOR$AE02,$AEBF,9//n/#UDG(n,#PEEK(n+8),5)/ | // }
+; { #FOR$AE02,$AED1,9//n/#UDG(n,#PEEK(n+8),5)/ | // }
 ; TABLE#
 b$AE02 DEFB $30,$08,$04,$05,$02,$8D,$70,$1C
  $AE0A DEFB $02,$22,$22,$14,$E7,$3C,$24,$44
@@ -7397,9 +7386,7 @@ b$AE02 DEFB $30,$08,$04,$05,$02,$8D,$70,$1C
  $AEB2 DEFB $80,$80,$7F,$0F,$00,$00,$00,$00
  $AEBA DEFB $FF,$00,$00,$FF,$0F,$11,$11,$11
  $AEC2 DEFB $11,$E1,$01,$01,$FE,$0F
-
-; Data block at AEC8
-b$AEC8 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $AEC8 DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $AED0 DEFB $0A
 
 ; Put String to Screen
@@ -8044,26 +8031,26 @@ c$B371 DI            ;
  $B38C JR NZ,$B374   ;
  $B38E RET           ;
 
-; Routine at B38F
-c$B38F POP HL        ;
+; Puts 3x3 data from $7C21 to (HL+2)
+c$B38F POP HL        ; {Stack -> HL, HL+=2, HL->Stack (HL)->HL
  $B390 INC HL        ;
  $B391 LD A,(HL)     ;
  $B392 INC HL        ;
  $B393 PUSH HL       ;
  $B394 LD H,(HL)     ;
- $B395 LD L,A        ;
+ $B395 LD L,A        ; }
  $B396 LD DE,$7C21   ;
- $B399 LD C,$03      ;
-*$B39B LD B,$03      ;
+ $B399 LD C,$03      ; Rows count = 3
+*$B39B LD B,$03      ; Columns count = 3
 *$B39D LD A,(DE)     ;
  $B39E LD (HL),A     ;
  $B39F INC DE        ;
  $B3A0 INC HL        ;
  $B3A1 DJNZ $B39D    ;
- $B3A3 PUSH DE       ;
+ $B3A3 PUSH DE       ; {HL+=30-3 (width = 30 characters. 30-3 = 27 = 0x1b)
  $B3A4 LD DE,$001B   ;
  $B3A7 ADD HL,DE     ;
- $B3A8 POP DE        ;
+ $B3A8 POP DE        ; }
  $B3A9 DEC C         ;
  $B3AA JR NZ,$B39B   ;
  $B3AC JP $734A      ;
@@ -8520,8 +8507,8 @@ c$B702 POP HL        ;
  $B704 JR $B6EE      ;
 
 ; Reference links to different element routines
-b$B706 DEFW $B38F    ; 0: Take HL from Stack then: Put 9 bytes from $7c21 to
-                     ; HL(1..2) 3x3 square
+b$B706 DEFW $B38F    ; 0: Take HL from Stack then: Puts 9 bytes from $7c21 to
+                     ; buffer[HL[1..2]] (3x3 square)
  $B708 DEFW $7381    ; 1: Take HL from Stack then: HL(1) times fill (HL3..4) by
                      ; (HL+2) with 0x1e step (vertical)
  $B70A DEFW $739F    ; 2: Take HL from Stack then: HL(1) times fill (HL3..4) by

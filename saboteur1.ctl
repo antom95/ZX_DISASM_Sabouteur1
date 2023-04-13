@@ -153,6 +153,10 @@ W $7AF8,2,2,2,2,2 #TRACESCREEN
 W $7B56,2,2,2,2,2 #TRACESCREEN
 W $7B90,2,2,2,2,2 #TRACESCREEN
 W $7BD2,2,2,2,2,2 #TRACESCREEN
+
+B $7C0C Object?
+B $7C21 Object?
+B $7C2A Object?
 W $7C2E,2,2,2,2,2 #TRACESCREEN
 W $7C6D,2,2,2,2,2 #TRACESCREEN
 W $7C9C,2,2,2,2,2 #TRACESCREEN
@@ -448,10 +452,10 @@ T $AD59,12,12
 b $AD65 Base gamescreen Layout
 B $AD65,157,8*19,5 #SMAP$AD65,$AE02
 b $AE02 Base game Screen Sprites
-D $AE02 #UDGTABLE { #FOR$AE02,$AEBF,9//n/#UDG(n,#PEEK(n+8),5)/ | // } TABLE#
+D $AE02 #UDGTABLE { #FOR$AE02,$AED1,9//n/#UDG(n,#PEEK(n+8),5)/ | // } TABLE#
 B $AE02,198,8*24,6
-b $AEC8 Data block at AEC8
-B $AEC8,9,8,1
+;b $AEC8 Data block at AEC8
+;B $AEC8,9,8,1
 c $AED1 Put String to Screen
 D $AED1 Used by the routines at #R$ACCA, #R$AEF0, #R$AF9C, #R$B040, #R$B4DE, #R$B724, #R$BEB3, #R$BFD5, #R$DEC1, #R$DF37, #R$E097 and #R$E2A7.
 R $AED1 C Length
@@ -508,7 +512,11 @@ N $B350 This entry point is used by the routines at #R$B320, #R$B32A, #R$B334 an
 c $B368 Routine at B368
 c $B371 Routine at B371
 D $B371 Used by the routine at #R$BC55.
-c $B38F Routine at B38F
+c $B38F Puts 3x3 data from $7C21 to (HL+2)
+C $B38F,7 Stack -> HL, HL+=2, HL->Stack (HL)->HL
+C $B399,2 Rows count = 3
+C $B39B,2 Columns count = 3
+C $B3A3,6 HL+=30-3 (width = 30 characters. 30-3 = 27 = 0x1b)
 s $B3AF Unused
 S $B3AF,1,$01
 c $B3B0 Routine at B3B0
@@ -568,7 +576,7 @@ N $B6EE This entry point is used by the routine at #R$B702.
 c $B702 Routine at B702
 D $B702 Used by the routine at #R$734A.
 b $B706 Reference links to different element routines
-W $B706,2 0: Take HL from Stack then: Put 9 bytes from $7c21 to HL(1..2) 3x3 square
+W $B706,2 0: Take HL from Stack then: Puts 9 bytes from $7c21 to buffer[HL[1..2]] (3x3 square)
 W $B708,2 1: Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x1e step (vertical)
 W $B70A,2 2: Take HL from Stack then: HL(1) times fill (HL3..4) by (HL+2) with 0x01 step (horizontal)
 W $B70C,2 3: Take HL from Stack then: Fill Square by HL(1) HL(2)xHL(3) to HL(4..5)
