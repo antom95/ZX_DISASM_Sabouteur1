@@ -5,6 +5,7 @@ from skoolkit.skoolmacro import parse_ints
 
 class SaboteurHtmlWriter(HtmlWriter):
     def __init__(self, skool_parser, ref_parser, file_info):
+        self.parent_skool_parser = skool_parser
         self.RoomsList = []
         self.Rooms = []
         self.Memory = []
@@ -64,21 +65,21 @@ class SaboteurHtmlWriter(HtmlWriter):
 
         MapWidth = maxx - minx + 1
         MapHeigh = maxy - miny + 1
-        GameMap=[[0 for i in range(MapWidth*30)] for y in range(MapHeigh*17)]
+        GameMap = [[0 for i in range(MapWidth*30)] for y in range(MapHeigh*17)]
 
         for r in self.Rooms:
             xs = (r[0]-minx)*30
             ys = (r[1]-miny)*17
             for y in range(17):
                 for x in range(30):
-                    GameMap[ys+y][xs+x]=r[2][y*30+x]
+                    GameMap[ys+y][xs+x] = r[2][y*30+x]
 
         lines = []
         for y in range(MapHeigh*17):
             line = []
             for x in range(MapWidth*30):
-                c_address = 0xf700 + GameMap[y][x]*9;
-                line.append(Udg(self.Memory[c_address+8], self.Memory[c_address:c_address+8]))
+                c_address = 0xf700 + GameMap[y][x] * 9
+                line.append(Udg(self.Memory[c_address + 8], self.Memory[c_address:c_address + 8]))
             lines.append(line)
 
         #frame = Frame([[Udg(self.snapshot[address2+8], udg_data)]], 2)
@@ -114,18 +115,18 @@ class SaboteurHtmlWriter(HtmlWriter):
                     x=0
                     y=y+1
             else:
-                cnt = c-0x14
+                cnt = c - 0x14
                 c = self.snapshot[address]
-                address = address+1
-                c_address = c*9 + address2
+                address = address + 1
+                c_address = c * 9 + address2
                 for i in range(cnt):
-                    line.append(Udg(self.snapshot[c_address+8], self.snapshot[c_address:c_address+8]))
+                    line.append(Udg(self.snapshot[c_address + 8], self.snapshot[c_address:c_address + 8]))
                     x = x + 1
                     if x >= xmax:
                         lines.append(line)
-                        line=[]
-                        x=0
-                        y=y+1
+                        line = []
+                        x = 0
+                        y = y+1
         lines.append(line)
 
         #frame = Frame([[Udg(self.snapshot[address2+8], udg_data)]], 2)
@@ -263,7 +264,8 @@ class SaboteurHtmlWriter(HtmlWriter):
             elif ch == 8: ## HL(2) Size of left-to-bottom triangle by (hl+1) started at (HL3..4) wide bottom
                 c     = self.Memory[address]; address += 1
                 size  = self.Memory[address]; address += 1
-                addr1 = gaddr(address) ; address += 2
+                addr1 = gaddr(address)
+                address += 2
                 for y in range (size):
                     for x in range(y+1):
                         self.Memory[addr1-x+y*30]=c
@@ -365,7 +367,7 @@ class SaboteurHtmlWriter(HtmlWriter):
         #frame = Frame([[Udg(self.snapshot[address2+8], udg_data)]], 2)
         frame = Frame(lines, 3)
         fname = 'TRACESCR{}'.format(address)
-        return index, NavigatorString  + '<br>' + drawlog + self.handle_image(frame, fname, cwd)
+        return index, NavigatorString + '<br>' + drawlog + self.handle_image(frame, fname, cwd)
         #return end, NavigatorString   + self.handle_image(frame, fname, cwd)
 
 
