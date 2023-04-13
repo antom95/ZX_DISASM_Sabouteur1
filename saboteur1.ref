@@ -1,0 +1,3 @@
+[Config]
+HtmlWriterClass=../:saboteur1.SaboteurHtmlWriter
+GameDir=Saboteur1
