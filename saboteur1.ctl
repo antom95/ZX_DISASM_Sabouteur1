@@ -3,7 +3,7 @@ D $4000 #SCR(loading)
 @ $5B00 replace=/#sprite\i/#UDGARRAY#(4#FOR(\1,\1+207,9)||n|;n,#PEEK(n+8)||)
 b $5B00 Data Block
 B $5B00,492,8*61,4 #UDGTABLE { #SPRITES$d601,16,17,15,2 | #SPRITES$d601,16,17,10,2 } TABLE#
-B $5B01,492,8*61,4 #UDGTABLE { #SPRITES$d600,16,8,10,1 } TABLE#
+;B $5B01,492,8*61,4 #UDGTABLE { #SPRITES$d600,16,8,10,1 } TABLE#
 t $5CEC Message at 5CEC
 T $5CEC,8,8
 b $5CF4 Data block at 5CF4
@@ -137,19 +137,18 @@ c $7918 Routine at 7918
 c $791B Routine at 791B
 b $791E GAME MAP Data
 ;D $791E #BUILDMAP
-;M $791E,102 #TRACESCREEN
-M $791E,102 This comment covers the following 3 sub-blocks  #TRACESCREEN
+M $791E,102 #TRACESCREEN
+;M $791E,102 This comment covers the following 3 sub-blocks  #TRACESCREEN
 W $791E,12,4,2
 B $792A,90,2,6,5*2,6,5*5,7*5,5,1
 B $7984,65,1
 ;M $791E,102 #TRACESCREEN
 ;W $791E,12,4,2 #TRACESCREEN
 ;B $792A,90,2,6,5,5,6,5,5,5,5,5,7,7,7,7,7,5,1
-B $7984,66
-M $79C6,81 RTrestING1 #TRACESCREEN!
-w $79C6,12,4,2
-b $79D2,69,2,6,6,5,7,6,5,7,4,5,7,4,4,1
-M $7A17,94 rest2 #TRACESCREEN !
+M $79C6,81 #TRACESCREEN
+W $79C6,12,4,2
+B $79D2,69,2,6,6,5,7,6,5,7,4,5,7,4,4,1
+M $7A17,94 #TRACESCREEN
 W $7A17,12,4,2
 B $7A23,82,2,5,5,6,6,5,5,5,4,5,5,7,7,7,7,1
 M $7A75,41 #TRACESCREEN
@@ -490,29 +489,29 @@ M $9BE7,82 #TRACESCREEN
 W $9BE7,12,4,2
 B $9BF3,70,6,6,5,5,5,6,5,7,7,5,7,5,1
 B $9C39
-B $9C43,1,1
-С $9C44 Routine at 9C44
+B $9C43,1
+c $9C44 Routine at 9C44
 D $9C44 Used by the routines at #R$B452, #R$B458 and #R$B47A.
-С $9CA8 Routine at 9CA8
+c $9CA8 Routine at 9CA8
 D $9CA8 Used by the routine at #R$9C44.
 N $9D31 This entry point is used by the routine at #R$9C44.
 N $9D34 This entry point is used by the routine at #R$9D8B.
 N $9D58 This entry point is used by the routine at #R$9D75.
-С $9D5C Routine at 9D5C
+c $9D5C Routine at 9D5C
 D $9D5C Used by the routines at #R$9C44 and #R$9CA8.
-С $9D75 Routine at 9D75
+c $9D75 Routine at 9D75
 D $9D75 Used by the routine at #R$9CA8.
-С $9D8B Routine at 9D8B
+c $9D8B Routine at 9D8B
 D $9D8B Used by the routine at #R$9CA8.
-С $9DCD Routine at 9DCD
+c $9DCD Routine at 9DCD
 D $9DCD Used by the routines at #R$A154, #R$A15F, #R$A1A6, #R$A1B5, #R$A1C0, #R$A1CB, #R$A1D6, #R$A353 and #R$B42E.
-С $9DD9 Routine at 9DD9
+c $9DD9 Routine at 9DD9
 D $9DD9 Used by the routines at #R$9CA8, #R$9DF1, #R$A434, #R$B937, #R$BC55, #R$C22F, #R$C4F6, #R$C50D, #R$C5C6 and #R$FA31.
 N $9DDA Routine at 9DDA
-С $9DDA Routine at 9DDA
+c $9DDA Routine at 9DDA
 b $9DEF Data block at 9DEF
 B $9DEF,2,2
-С $9DF1 Routine at 9DF1
+c $9DF1 Routine at 9DF1
 D $9DF1 Used by the routine at #R$9DDA.
 M $9DF5,45 #TRACESCREEN
 W $9DF5,12,4,2
@@ -542,7 +541,7 @@ B $A004,30
 M $A022,133 #TRACESCREEN
 W $A022,12,4,2
 B $A02E,121,6,6,6,7,7,7,7,7,7,7,6,6,7,4,5,7,6,5,7,1
-С $A0DF Routine at A0DF
+c $A0DF Routine at A0DF
 N $A0E2 This entry point is used by the routines at #R$A0E8, #R$A0ED, #R$A0F2, #R$A0F7, #R$A0FC, #R$A101, #R$A106, #R$A10B, #R$A110, #R$A115, #R$A11F, #R$A124 and #R$A129.
 N $A0E5 This entry point is used by the routine at #R$A142.
 c $A0E8 Routine at A0E8
