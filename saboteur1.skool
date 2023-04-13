@@ -1349,7 +1349,7 @@ c$7918 JP $B44C      ;
 c$791B JP $B425      ;
 
 ; GAME MAP Data
-b$791E DEFW $B446                           ; {#TRACESCR
+b$791E DEFW $B446                           ; {#TRACESCREEN
  $7920 DEFW $C64C                           ;
  $7922 DEFW $0000                           ;
  $7924 DEFW $79C6                           ;
@@ -1433,7 +1433,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $79C0 DEFW $3D3E                           ;
  $79C2 DEFW $FFFF                           ;
  $79C4 DEFW $3EFF                           ; }
- $79C6 DEFW $B452                           ; {#TRACESCR
+ $79C6 DEFW $B452                           ; {#TRACESCREEN
  $79C8 DEFW $B42E                           ;
  $79CA DEFW $791E                           ;
  $79CC DEFW $7A17                           ;
@@ -1474,7 +1474,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7A12 DEFW $F00E                           ;
  $7A14 DEFW $666D                           ;
  $7A16 DEFB $FF                             ; }
- $7A17 DEFW $B483                           ; {#TRACESCR
+ $7A17 DEFW $B483                           ; {#TRACESCREEN
  $7A19 DEFW $A142                           ;
  $7A1B DEFW $79C6                           ;
  $7A1D DEFW $7B90                           ;
@@ -1491,7 +1491,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7A63 DEFB $79,$9F,$70,$05,$04,$07,$8E,$79
  $7A6B DEFB $48,$70,$05,$04,$07,$8E,$79,$2B
  $7A73 DEFB $70,$FF
- $7A75 DEFW $B41F                           ; {#TRACESCR
+ $7A75 DEFW $B41F                           ; {#TRACESCREEN
  $7A77 DEFW $B422                           ;
  $7A79 DEFW $0000                           ;
  $7A7B DEFW $0000                           ;
@@ -1512,7 +1512,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7A99 DEFW $F00E                           ;
  $7A9B DEFW $66C5                           ;
  $7A9D DEFB $FF                             ; }
- $7A9E DEFW $B41F                           ; {#TRACESCR
+ $7A9E DEFW $B41F                           ; {#TRACESCREEN
  $7AA0 DEFW $B422                           ;
  $7AA2 DEFW $0000                           ;
  $7AA4 DEFW $7ACD                           ;
@@ -1536,7 +1536,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7AC8 DEFW $7188                           ;
  $7ACA DEFW $7120                           ;
  $7ACC DEFB $FF                             ; }
- $7ACD DEFW $B41F                           ; {#TRACESCR
+ $7ACD DEFW $B41F                           ; {#TRACESCREEN
  $7ACF DEFW $B422                           ;
  $7AD1 DEFW $7A9E                           ;
  $7AD3 DEFW $7AF8                           ;
@@ -1558,7 +1558,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7AF3 DEFW $0E02                           ;
  $7AF5 DEFW $65A2                           ;
  $7AF7 DEFB $FF                             ; }
- $7AF8 DEFW $B41F                           ; {#TRACESCR
+ $7AF8 DEFW $B41F                           ; {#TRACESCREEN
  $7AFA DEFW $B422                           ;
  $7AFC DEFW $7ACD                           ;
  $7AFE DEFW $0001                           ;
@@ -1605,7 +1605,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7B50 DEFW $FDFD                           ;
  $7B52 DEFW $FDFD                           ;
  $7B54 DEFW $FCFD                           ; }
- $7B56 DEFW $B41F                           ; {#TRACESCR
+ $7B56 DEFW $B41F                           ; {#TRACESCREEN
  $7B58 DEFW $B422                           ;
  $7B5A DEFW $0000                           ;
  $7B5C DEFW $0000                           ;
@@ -1634,7 +1634,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7B8A DEFW $0279                           ;
  $7B8C DEFW $CE01                           ;
  $7B8E DEFW $FF66                           ; }
- $7B90 DEFW $B41F                           ; {#TRACESCR
+ $7B90 DEFW $B41F                           ; {#TRACESCREEN
  $7B92 DEFW $B422                           ;
  $7B94 DEFW $7A17                           ;
  $7B96 DEFW $7BD2                           ;
@@ -1667,7 +1667,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7BCC DEFW $AA07                           ;
  $7BCE DEFW $2A79                           ;
  $7BD0 DEFW $FF70                           ; }
- $7BD2 DEFW $B41F                           ; {#TRACESCR
+ $7BD2 DEFW $B41F                           ; {#TRACESCREEN
  $7BD4 DEFW $B422                           ;
  $7BD6 DEFW $7B90                           ;
  $7BD8 DEFW $7D5A                           ;
@@ -1713,7 +1713,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7C28 DEFW $1C1B                           ;
  $7C2A DEFW $0906                           ;
  $7C2C DEFW $ECED                           ; }
- $7C2E DEFW $B458                           ; {#TRACESCR
+ $7C2E DEFW $B458                           ; {#TRACESCREEN
  $7C30 DEFW $A1A6                           ;
  $7C32 DEFW $7D5A                           ;
  $7C34 DEFW $0000                           ;
@@ -1745,7 +1745,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7C68 DEFW $7984                           ;
  $7C6A DEFW $672A                           ;
  $7C6C DEFB $FF                             ; }
- $7C6D DEFW $B41F                           ; {#TRACESCR
+ $7C6D DEFW $B41F                           ; {#TRACESCREEN
  $7C6F DEFW $B422                           ;
  $7C71 DEFW $0000                           ;
  $7C73 DEFW $7FC4                           ;
@@ -1769,7 +1769,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7C97 DEFW $65A4                           ;
  $7C99 DEFW $06FF                           ;
  $7C9B DEFB $09                             ; }
- $7C9C DEFW $C6A5                           ; {#TRACESCR
+ $7C9C DEFW $C6A5                           ; {#TRACESCREEN
  $7C9E DEFW $791B                           ;
  $7CA0 DEFW $947C                           ;
  $7CA2 DEFW $93DF                           ;
@@ -1864,7 +1864,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7D54 DEFW $0D22                           ;
  $7D56 DEFW $0D0D                           ;
  $7D58 DEFW $200D                           ; }
- $7D5A DEFW $B483                           ; {#TRACESCR
+ $7D5A DEFW $B483                           ; {#TRACESCREEN
  $7D5C DEFW $A14A                           ;
  $7D5E DEFW $7BD2                           ;
  $7D60 DEFW $7C2E                           ;
@@ -1904,7 +1904,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7DA4 DEFW $798E                           ;
  $7DA6 DEFW $70A9                           ;
  $7DA8 DEFB $FF                             ; }
- $7DA9 DEFW $7918                           ; {#TRACESCR
+ $7DA9 DEFW $7918                           ; {#TRACESCREEN
  $7DAB DEFW $A0E8                           ;
  $7DAD DEFW $0000                           ;
  $7DAF DEFW $7E8C                           ;
@@ -1950,7 +1950,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7DFF DEFW $0C04                           ;
  $7E01 DEFW $067C                           ;
  $7E03 DEFW $FF71                           ; }
- $7E05 DEFW $B452                           ; {#TRACESCR
+ $7E05 DEFW $B452                           ; {#TRACESCREEN
  $7E07 DEFW $A35C                           ;
  $7E09 DEFW $0000                           ;
  $7E0B DEFW $80A7                           ;
@@ -2018,7 +2018,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7E87 DEFW $1D09                           ;
  $7E89 DEFW $090A                           ;
  $7E8B DEFB $0A                             ; }
- $7E8C DEFW $7918                           ; {#TRACESCR
+ $7E8C DEFW $7918                           ; {#TRACESCREEN
  $7E8E DEFW $A0ED                           ;
  $7E90 DEFW $7DA9                           ;
  $7E92 DEFW $7EF2                           ;
@@ -2069,7 +2069,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7EEC DEFW $0C04                           ;
  $7EEE DEFW $067C                           ;
  $7EF0 DEFW $FF71                           ; }
- $7EF2 DEFW $B47A                           ; {#TRACESCR
+ $7EF2 DEFW $B47A                           ; {#TRACESCREEN
  $7EF4 DEFW $A154                           ;
  $7EF6 DEFW $7E8C                           ;
  $7EF8 DEFW $0000                           ;
@@ -2112,7 +2112,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7F42 DEFW $A003                           ;
  $7F44 DEFW $2371                           ;
  $7F46 DEFW $FF71                           ; }
- $7F48 DEFW $B483                           ; {#TRACESCR
+ $7F48 DEFW $B483                           ; {#TRACESCREEN
  $7F4A DEFW $A14F                           ;
  $7F4C DEFW $0000                           ;
  $7F4E DEFW $7F9C                           ;
@@ -2154,7 +2154,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7F96 DEFW $8403                           ;
  $7F98 DEFW $3E79                           ;
  $7F9A DEFW $FF67                           ; }
- $7F9C DEFW $B458                           ; {#TRACESCR
+ $7F9C DEFW $B458                           ; {#TRACESCREEN
  $7F9E DEFW $A1B5                           ;
  $7FA0 DEFW $7F48                           ;
  $7FA2 DEFW $0000                           ;
@@ -2174,7 +2174,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $7FBE DEFW $8403                           ;
  $7FC0 DEFW $4879                           ;
  $7FC2 DEFW $FF67                           ; }
- $7FC4 DEFW $B41F                           ; {#TRACESCR
+ $7FC4 DEFW $B41F                           ; {#TRACESCREEN
  $7FC6 DEFW $B422                           ;
  $7FC8 DEFW $7C6D                           ;
  $7FCA DEFW $8008                           ;
@@ -2208,7 +2208,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8002 DEFW $5105                           ;
  $8004 DEFW $A77B                           ;
  $8006 DEFW $FF65                           ; }
- $8008 DEFW $B41F                           ; {#TRACESCR
+ $8008 DEFW $B41F                           ; {#TRACESCREEN
  $800A DEFW $B422                           ;
  $800C DEFW $7FC4                           ;
  $800E DEFW $0000                           ;
@@ -2263,7 +2263,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8070 DEFW $1101                           ;
  $8072 DEFW $9EFD                           ;
  $8074 DEFW $FF65                           ; }
- $8076 DEFW $B41F                           ; {#TRACESCR
+ $8076 DEFW $B41F                           ; {#TRACESCREEN
  $8078 DEFW $B422                           ;
  $807A DEFW $0000                           ;
  $807C DEFW $0000                           ;
@@ -2288,7 +2288,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $80A2 DEFW $1102                           ;
  $80A4 DEFW $65A4                           ;
  $80A6 DEFB $FF                             ; }
- $80A7 DEFW $B458                           ; {#TRACESCR
+ $80A7 DEFW $B458                           ; {#TRACESCREEN
  $80A9 DEFW $A1CB                           ;
  $80AB DEFW $7E05                           ;
  $80AD DEFW $80F6                           ;
@@ -2328,7 +2328,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $80F1 DEFW $7C21                           ;
  $80F3 DEFW $7125                           ;
  $80F5 DEFB $FF                             ; }
- $80F6 DEFW $B452                           ; {#TRACESCR
+ $80F6 DEFW $B452                           ; {#TRACESCREEN
  $80F8 DEFW $A38E                           ;
  $80FA DEFW $80A7                           ;
  $80FC DEFW $0000                           ;
@@ -2382,7 +2382,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $815C DEFW $8A01                           ;
  $815E DEFW $557E                           ;
  $8160 DEFW $FF71                           ; }
- $8162 DEFW $B458                           ; {#TRACESCR
+ $8162 DEFW $B458                           ; {#TRACESCREEN
  $8164 DEFW $A1C0                           ;
  $8166 DEFW $81E5                           ;
  $8168 DEFW $0000                           ;
@@ -2448,7 +2448,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $81E0 DEFW $677E                           ;
  $81E2 DEFW $FFFF                           ;
  $81E4 DEFB $FF                             ; }
- $81E5 DEFW $B452                           ; {#TRACESCR
+ $81E5 DEFW $B452                           ; {#TRACESCREEN
  $81E7 DEFW $A353                           ;
  $81E9 DEFW $8238                           ;
  $81EB DEFW $8162                           ;
@@ -2490,7 +2490,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8233 DEFW $FF0B                           ;
  $8235 DEFW $6675                           ;
  $8237 DEFB $FF                             ; }
- $8238 DEFW $B41F                           ; {#TRACESCR
+ $8238 DEFW $B41F                           ; {#TRACESCREEN
  $823A DEFW $B422                           ;
  $823C DEFW $0000                           ;
  $823E DEFW $81E5                           ;
@@ -2523,7 +2523,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8274 DEFW $2B05                           ;
  $8276 DEFW $7016                           ;
  $8278 DEFB $FF                             ; }
- $8279 DEFW $B41F                           ; {#TRACESCR
+ $8279 DEFW $B41F                           ; {#TRACESCREEN
  $827B DEFW $B422                           ;
  $827D DEFW $0000                           ;
  $827F DEFW $82DD                           ;
@@ -2573,7 +2573,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $82D7 DEFW $0E67                           ;
  $82D9 DEFW $BE00                           ;
  $82DB DEFW $FF66                           ; }
- $82DD DEFW $B41F                           ; {#TRACESCR
+ $82DD DEFW $B41F                           ; {#TRACESCREEN
  $82DF DEFW $B422                           ;
  $82E1 DEFW $8279                           ;
  $82E3 DEFW $8321                           ;
@@ -2607,7 +2607,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $831B DEFW $7B03                           ;
  $831D DEFW $257E                           ;
  $831F DEFW $FF71                           ; }
- $8321 DEFW $B41F                           ; {#TRACESCR
+ $8321 DEFW $B41F                           ; {#TRACESCREEN
  $8323 DEFW $B422                           ;
  $8325 DEFW $82DD                           ;
  $8327 DEFW $0000                           ;
@@ -2657,7 +2657,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $837F DEFW $1002                           ;
  $8381 DEFW $65A0                           ;
  $8383 DEFB $FF                             ; }
- $8384 DEFW $B41F                           ; {#TRACESCR
+ $8384 DEFW $B41F                           ; {#TRACESCREEN
  $8386 DEFW $B422                           ;
  $8388 DEFW $0000                           ;
  $838A DEFW $0000                           ;
@@ -2710,7 +2710,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $83E8 DEFW $7B4F                           ;
  $83EA DEFW $6711                           ;
  $83EC DEFB $FF                             ; }
- $83ED DEFW $B452                           ; {#TRACESCR
+ $83ED DEFW $B452                           ; {#TRACESCREEN
  $83EF DEFW $A361                           ;
  $83F1 DEFW $0000                           ;
  $83F3 DEFW $920A                           ;
@@ -2759,7 +2759,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8449 DEFW $7E7B                           ;
  $844B DEFW $7121                           ;
  $844D DEFB $FF                             ; }
- $844E DEFW $B452                           ; {#TRACESCR
+ $844E DEFW $B452                           ; {#TRACESCREEN
  $8450 DEFW $A37F                           ;
  $8452 DEFW $84A8                           ;
  $8454 DEFW $0000                           ;
@@ -2800,7 +2800,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $849A DEFB $71                             ; }
  $849B DEFB $FF,$00,$01,$02,$03,$04,$05,$03
  $84A3 DEFB $04,$05,$06,$07,$08
- $84A8 DEFW $B41F                           ; {#TRACESCR
+ $84A8 DEFW $B41F                           ; {#TRACESCREEN
  $84AA DEFW $F973                           ;
  $84AC DEFW $84EE                           ;
  $84AE DEFW $844E                           ;
@@ -2830,7 +2830,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $84DE DEFB $FF                             ; }
  $84DF DEFB $00,$01,$01,$01,$02,$03,$04,$04
  $84E7 DEFB $04,$05,$06,$07,$07,$07,$08
- $84EE DEFW $7918                           ; {#TRACESCR
+ $84EE DEFW $7918                           ; {#TRACESCREEN
  $84F0 DEFW $A10B                           ;
  $84F2 DEFW $0000                           ;
  $84F4 DEFW $84A8                           ;
@@ -2858,7 +2858,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8520 DEFW $7101                           ;
  $8522 DEFW $0400                           ;
  $8524 DEFW $FF71                           ; }
- $8526 DEFW $B483                           ; {#TRACESCR
+ $8526 DEFW $B483                           ; {#TRACESCREEN
  $8528 DEFW $A179                           ;
  $852A DEFW $0000                           ;
  $852C DEFW $858F                           ;
@@ -2902,7 +2902,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $857E DEFB $01,$02,$03,$04,$04,$04,$05,$03
  $8586 DEFB $04,$04,$04,$05,$06,$07,$07,$07
  $858E DEFB $08
- $858F DEFW $7918                           ; {#TRACESCR
+ $858F DEFW $7918                           ; {#TRACESCREEN
  $8591 DEFW $A106                           ;
  $8593 DEFW $8526                           ;
  $8595 DEFW $85BD                           ;
@@ -2925,7 +2925,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $85B7 DEFW $A003                           ;
  $85B9 DEFW $1E71                           ;
  $85BB DEFW $FF71                           ; }
- $85BD DEFW $B41F                           ; {#TRACESCR
+ $85BD DEFW $B41F                           ; {#TRACESCREEN
  $85BF DEFW $B422                           ;
  $85C1 DEFW $858F                           ;
  $85C3 DEFW $0000                           ;
@@ -2963,7 +2963,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8603 DEFW $0071                           ;
  $8605 DEFW $7117                           ;
  $8607 DEFB $FF                             ; }
- $8608 DEFW $B452                           ; {#TRACESCR
+ $8608 DEFW $B452                           ; {#TRACESCREEN
  $860A DEFW $A37A                           ;
  $860C DEFW $0000                           ;
  $860E DEFW $86FD                           ;
@@ -3028,7 +3028,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8684 DEFW $0071                           ;
  $8686 DEFW $7125                           ;
  $8688 DEFB $FF                             ; }
- $8689 DEFW $B41F                           ; {#TRACESCR
+ $8689 DEFW $B41F                           ; {#TRACESCREEN
  $868B DEFW $B422                           ;
  $868D DEFW $86FD                           ;
  $868F DEFW $0000                           ;
@@ -3083,7 +3083,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $86F1 DEFW $6F7E                           ;
  $86F3 DEFW $FF70                           ; }
  $86F5 DEFB $00,$01,$01,$02,$06,$07,$07,$08
- $86FD DEFW $B41F                           ; {#TRACESCR
+ $86FD DEFW $B41F                           ; {#TRACESCREEN
  $86FF DEFW $B422                           ;
  $8701 DEFW $8608                           ;
  $8703 DEFW $8689                           ;
@@ -3113,7 +3113,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8733 DEFW $7069                           ;
  $8735 DEFW $6F00                           ;
  $8737 DEFW $FF70                           ; }
- $8739 DEFW $7918                           ; {#TRACESCR
+ $8739 DEFW $7918                           ; {#TRACESCREEN
  $873B DEFW $A101                           ;
  $873D DEFW $8799                           ;
  $873F DEFW $8802                           ;
@@ -3161,7 +3161,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8793 DEFW $0504                           ;
  $8795 DEFW $0706                           ;
  $8797 DEFW $0807                           ; }
- $8799 DEFW $B41F                           ; {#TRACESCR
+ $8799 DEFW $B41F                           ; {#TRACESCREEN
  $879B DEFW $B422                           ;
  $879D DEFW $0000                           ;
  $879F DEFW $8739                           ;
@@ -3214,7 +3214,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $87FD DEFW $798E                           ;
  $87FF DEFW $7028                           ;
  $8801 DEFB $FF                             ; }
- $8802 DEFW $B452                           ; {#TRACESCR
+ $8802 DEFW $B452                           ; {#TRACESCREEN
  $8804 DEFW $A375                           ;
  $8806 DEFW $8739                           ;
  $8808 DEFW $0000                           ;
@@ -3239,7 +3239,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $882E DEFW $0273                           ;
  $8830 DEFW $A708                           ;
  $8832 DEFW $FF65                           ; }
- $8834 DEFW $B41F                           ; {#TRACESCR
+ $8834 DEFW $B41F                           ; {#TRACESCREEN
  $8836 DEFW $B422                           ;
  $8838 DEFW $889F                           ;
  $883A DEFW $890E                           ;
@@ -3293,7 +3293,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $889A DEFW $F9F9                           ;
  $889C DEFW $EFF9                           ;
  $889E DEFB $EE                             ; }
- $889F DEFW $B41F                           ; {#TRACESCR
+ $889F DEFW $B41F                           ; {#TRACESCREEN
  $88A1 DEFW $B422                           ;
  $88A3 DEFW $8953                           ;
  $88A5 DEFW $8834                           ;
@@ -3349,7 +3349,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8909 DEFW $8898                           ;
  $890B DEFW $66C2                           ;
  $890D DEFB $FF                             ; }
- $890E DEFW $B41F                           ; {#TRACESCR
+ $890E DEFW $B41F                           ; {#TRACESCREEN
  $8910 DEFW $B422                           ;
  $8912 DEFW $8834                           ;
  $8914 DEFW $8BF0                           ;
@@ -3384,7 +3384,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $894E DEFW $F80E                           ;
  $8950 DEFW $6689                           ;
  $8952 DEFB $FF                             ; }
- $8953 DEFW $B41F                           ; {#TRACESCR
+ $8953 DEFW $B41F                           ; {#TRACESCREEN
  $8955 DEFW $B422                           ;
  $8957 DEFW $0000                           ;
  $8959 DEFW $889F                           ;
@@ -3435,7 +3435,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $89B3 DEFW $1702                           ;
  $89B5 DEFW $E1FA                           ;
  $89B7 DEFW $FF66                           ; }
- $89B9 DEFW $B41F                           ; {#TRACESCR
+ $89B9 DEFW $B41F                           ; {#TRACESCREEN
  $89BB DEFW $B422                           ;
  $89BD DEFW $0000                           ;
  $89BF DEFW $8A2D                           ;
@@ -3493,7 +3493,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8A27 DEFW $0302                           ;
  $8A29 DEFW $0BFA                           ;
  $8A2B DEFW $FF67                           ; }
- $8A2D DEFW $B41F                           ; {#TRACESCR
+ $8A2D DEFW $B41F                           ; {#TRACESCREEN
  $8A2F DEFW $B422                           ;
  $8A31 DEFW $89B9                           ;
  $8A33 DEFW $8A81                           ;
@@ -3535,7 +3535,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8A7B DEFW $9803                           ;
  $8A7D DEFW $3D88                           ;
  $8A7F DEFW $FF67                           ; }
- $8A81 DEFW $B41F                           ; {#TRACESCR
+ $8A81 DEFW $B41F                           ; {#TRACESCREEN
  $8A83 DEFW $B422                           ;
  $8A85 DEFW $8A2D                           ;
  $8A87 DEFW $8AF4                           ;
@@ -3593,7 +3593,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8AEF DEFW $8898                           ;
  $8AF1 DEFW $66E2                           ;
  $8AF3 DEFB $FF                             ; }
- $8AF4 DEFW $B41F                           ; {#TRACESCR
+ $8AF4 DEFW $B41F                           ; {#TRACESCREEN
  $8AF6 DEFW $B422                           ;
  $8AF8 DEFW $8A81                           ;
  $8AFA DEFW $8C5A                           ;
@@ -3618,7 +3618,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8B20 DEFW $F80E                           ;
  $8B22 DEFW $668E                           ;
  $8B24 DEFB $FF                             ; }
- $8B25 DEFW $B483                           ; {#TRACESCR
+ $8B25 DEFW $B483                           ; {#TRACESCREEN
  $8B27 DEFW $A174                           ;
  $8B29 DEFW $0000                           ;
  $8B2B DEFW $8B71                           ;
@@ -3656,7 +3656,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8B6B DEFW $03FF                           ;
  $8B6D DEFW $F804                           ;
  $8B6F DEFW $FF66                           ; }
- $8B71 DEFW $7918                           ; {#TRACESCR
+ $8B71 DEFW $7918                           ; {#TRACESCREEN
  $8B73 DEFW $A0FC                           ;
  $8B75 DEFW $8B25                           ;
  $8B77 DEFW $8BAB                           ;
@@ -3685,7 +3685,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8BA5 DEFW $A904                           ;
  $8BA7 DEFW $0771                           ;
  $8BA9 DEFW $FF71                           ; }
- $8BAB DEFW $B41F                           ; {#TRACESCR
+ $8BAB DEFW $B41F                           ; {#TRACESCREEN
  $8BAD DEFW $B422                           ;
  $8BAF DEFW $8B71                           ;
  $8BB1 DEFW $0000                           ;
@@ -3720,7 +3720,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8BEB DEFW $71A9                           ;
  $8BED DEFW $7106                           ;
  $8BEF DEFB $FF                             ; }
- $8BF0 DEFW $B41F                           ; {#TRACESCR
+ $8BF0 DEFW $B41F                           ; {#TRACESCREEN
  $8BF2 DEFW $B422                           ;
  $8BF4 DEFW $890E                           ;
  $8BF6 DEFW $8CC8                           ;
@@ -3773,7 +3773,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8C54 DEFW $0101                           ;
  $8C56 DEFW $89FF                           ;
  $8C58 DEFW $FF66                           ; }
- $8C5A DEFW $B41F                           ; {#TRACESCR
+ $8C5A DEFW $B41F                           ; {#TRACESCREEN
  $8C5C DEFW $B422                           ;
  $8C5E DEFW $8AF4                           ;
  $8C60 DEFW $8D18                           ;
@@ -3828,7 +3828,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8CC2 DEFW $0502                           ;
  $8CC4 DEFW $2FFA                           ;
  $8CC6 DEFW $FF67                           ; }
- $8CC8 DEFW $B41F                           ; {#TRACESCR
+ $8CC8 DEFW $B41F                           ; {#TRACESCREEN
  $8CCA DEFW $B422                           ;
  $8CCC DEFW $8BF0                           ;
  $8CCE DEFW $8E9C                           ;
@@ -3868,7 +3868,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8D12 DEFW $AA07                           ;
  $8D14 DEFW $0079                           ;
  $8D16 DEFW $FF70                           ; }
- $8D18 DEFW $B41F                           ; {#TRACESCR
+ $8D18 DEFW $B41F                           ; {#TRACESCREEN
  $8D1A DEFW $B422                           ;
  $8D1C DEFW $8C5A                           ;
  $8D1E DEFW $8EE1                           ;
@@ -3902,7 +3902,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8D56 DEFW $BB04                           ;
  $8D58 DEFW $A171                           ;
  $8D5A DEFW $FF70                           ; }
- $8D5C DEFW $B483                           ; {#TRACESCR
+ $8D5C DEFW $B483                           ; {#TRACESCREEN
  $8D5E DEFW $A1A1                           ;
  $8D60 DEFW $8DCA                           ;
  $8D62 DEFW $0000                           ;
@@ -3957,7 +3957,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8DC4 DEFW $0601                           ;
  $8DC6 DEFW $962B                           ;
  $8DC8 DEFW $FF70                           ; }
- $8DCA DEFW $B41F                           ; {#TRACESCR
+ $8DCA DEFW $B41F                           ; {#TRACESCREEN
  $8DCC DEFW $B422                           ;
  $8DCE DEFW $0000                           ;
  $8DD0 DEFW $8D5C                           ;
@@ -4062,7 +4062,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8E96 DEFW $2828                           ;
  $8E98 DEFW $3201                           ;
  $8E9A DEFW $0133                           ; }
- $8E9C DEFW $B41F                           ; {#TRACESCR
+ $8E9C DEFW $B41F                           ; {#TRACESCREEN
  $8E9E DEFW $B422                           ;
  $8EA0 DEFW $8CC8                           ;
  $8EA2 DEFW $0000                           ;
@@ -4097,7 +4097,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8EDC DEFW $1102                           ;
  $8EDE DEFW $65AC                           ;
  $8EE0 DEFB $FF                             ; }
- $8EE1 DEFW $B41F                           ; {#TRACESCR
+ $8EE1 DEFW $B41F                           ; {#TRACESCREEN
  $8EE3 DEFW $B422                           ;
  $8EE5 DEFW $8D18                           ;
  $8EE7 DEFW $0000                           ;
@@ -4129,7 +4129,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8F1B DEFW $6304                           ;
  $8F1D DEFW $66E0                           ;
  $8F1F DEFB $FF                             ; }
- $8F20 DEFW $B41F                           ; {#TRACESCR
+ $8F20 DEFW $B41F                           ; {#TRACESCREEN
  $8F22 DEFW $B422                           ;
  $8F24 DEFW $8FBD                           ;
  $8F26 DEFW $0000                           ;
@@ -4179,7 +4179,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8F7E DEFW $0502                           ;
  $8F80 DEFW $97FA                           ;
  $8F82 DEFW $FF66                           ; }
- $8F84 DEFW $7918                           ; {#TRACESCR
+ $8F84 DEFW $7918                           ; {#TRACESCREEN
  $8F86 DEFW $A0F7                           ;
  $8F88 DEFW $9053                           ;
  $8F8A DEFW $0000                           ;
@@ -4208,7 +4208,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8FB8 DEFW $7984                           ;
  $8FBA DEFW $672A                           ;
  $8FBC DEFB $FF                             ; }
- $8FBD DEFW $B483                           ; {#TRACESCR
+ $8FBD DEFW $B483                           ; {#TRACESCREEN
  $8FBF DEFW $A16A                           ;
  $8FC1 DEFW $9005                           ;
  $8FC3 DEFW $8F20                           ;
@@ -4244,7 +4244,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $8FFF DEFW $BB04                           ;
  $9001 DEFW $3171                           ;
  $9003 DEFW $FF70                           ; }
- $9005 DEFW $B41F                           ; {#TRACESCR
+ $9005 DEFW $B41F                           ; {#TRACESCREEN
  $9007 DEFW $B422                           ;
  $9009 DEFW $92A7                           ;
  $900B DEFW $8FBD                           ;
@@ -4283,7 +4283,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $904D DEFW $8E07                           ;
  $904F DEFW $2479                           ;
  $9051 DEFW $FF70                           ; }
- $9053 DEFW $B41F                           ; {#TRACESCR
+ $9053 DEFW $B41F                           ; {#TRACESCREEN
  $9055 DEFW $B422                           ;
  $9057 DEFW $909F                           ;
  $9059 DEFW $8F84                           ;
@@ -4321,7 +4321,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9099 DEFW $0402                           ;
  $909B DEFW $8938                           ;
  $909D DEFW $FF66                           ; }
- $909F DEFW $B47A                           ; {#TRACESCR
+ $909F DEFW $B47A                           ; {#TRACESCREEN
  $90A1 DEFW $A15F                           ;
  $90A3 DEFW $92EF                           ;
  $90A5 DEFW $9053                           ;
@@ -4351,7 +4351,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $90D5 DEFW $AA07                           ;
  $90D7 DEFW $E479                           ;
  $90D9 DEFW $FF6F                           ; }
- $90DB DEFW $B452                           ; {#TRACESCR
+ $90DB DEFW $B452                           ; {#TRACESCREEN
  $90DD DEFW $A370                           ;
  $90DF DEFW $913F                           ;
  $90E1 DEFW $91BA                           ;
@@ -4401,7 +4401,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9139 DEFW $8E07                           ;
  $913B DEFW $1479                           ;
  $913D DEFW $FF70                           ; }
- $913F DEFW $B41F                           ; {#TRACESCR
+ $913F DEFW $B41F                           ; {#TRACESCREEN
  $9141 DEFW $B422                           ;
  $9143 DEFW $0000                           ;
  $9145 DEFW $90DB                           ;
@@ -4463,7 +4463,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $91B5 DEFW $7E8A                           ;
  $91B7 DEFW $7143                           ;
  $91B9 DEFB $FF                             ; }
- $91BA DEFW $B452                           ; {#TRACESCR
+ $91BA DEFW $B452                           ; {#TRACESCREEN
  $91BC DEFW $A36B                           ;
  $91BE DEFW $90DB                           ;
  $91C0 DEFW $0000                           ;
@@ -4503,7 +4503,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9204 DEFW $70A2                           ;
  $9206 DEFW $AD00                           ;
  $9208 DEFW $FF70                           ; }
- $920A DEFW $7918                           ; {#TRACESCR
+ $920A DEFW $7918                           ; {#TRACESCREEN
  $920C DEFW $A0F2                           ;
  $920E DEFW $83ED                           ;
  $9210 DEFW $924E                           ;
@@ -4537,7 +4537,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9248 DEFW $7B03                           ;
  $924A DEFW $207E                           ;
  $924C DEFW $FF71                           ; }
- $924E DEFW $B452                           ; {#TRACESCR
+ $924E DEFW $B452                           ; {#TRACESCREEN
  $9250 DEFW $A366                           ;
  $9252 DEFW $920A                           ;
  $9254 DEFW $0000                           ;
@@ -4582,7 +4582,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $92A2 DEFW $0071                           ;
  $92A4 DEFW $7118                           ;
  $92A6 DEFB $FF                             ; }
- $92A7 DEFW $B483                           ; {#TRACESCR
+ $92A7 DEFW $B483                           ; {#TRACESCREEN
  $92A9 DEFW $A16F                           ;
  $92AB DEFW $0000                           ;
  $92AD DEFW $9005                           ;
@@ -4618,7 +4618,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $92E9 DEFW $BB04                           ;
  $92EB DEFW $DE71                           ;
  $92ED DEFW $FF70                           ; }
- $92EF DEFW $7918                           ; {#TRACESCR
+ $92EF DEFW $7918                           ; {#TRACESCREEN
  $92F1 DEFW $791B                           ;
  $92F3 DEFW $0000                           ;
  $92F5 DEFW $909F                           ;
@@ -4686,7 +4686,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9371 DEFW $CEFF                           ;
  $9373 DEFW $CFCF                           ;
  $9375 DEFB $CF                             ; }
- $9376 DEFW $B41F                           ; {#TRACESCR
+ $9376 DEFW $B41F                           ; {#TRACESCREEN
  $9378 DEFW $B422                           ;
  $937A DEFW $93DF                           ;
  $937C DEFW $0000                           ;
@@ -4739,7 +4739,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $93DA DEFW $7B4F                           ;
  $93DC DEFW $673E                           ;
  $93DE DEFB $FF                             ; }
- $93DF DEFW $B41F                           ; {#TRACESCR
+ $93DF DEFW $B41F                           ; {#TRACESCREEN
  $93E1 DEFW $C671                           ;
  $93E3 DEFW $7C9C                           ;
  $93E5 DEFW $9376                           ;
@@ -4780,7 +4780,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $942B DEFW $4F03                           ;
  $942D DEFW $4B7B                           ;
  $942F DEFW $FF67                           ; }
- $9431 DEFW $B41F                           ; {#TRACESCR
+ $9431 DEFW $B41F                           ; {#TRACESCREEN
  $9433 DEFW $B422                           ;
  $9435 DEFW $0000                           ;
  $9437 DEFW $0000                           ;
@@ -4796,7 +4796,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $944B DEFW $1101                           ;
  $944D DEFW $A7FD                           ;
  $944F DEFW $FF65                           ; }
- $9451 DEFW $B41F                           ; {#TRACESCR
+ $9451 DEFW $B41F                           ; {#TRACESCREEN
  $9453 DEFW $B422                           ;
  $9455 DEFW $0000                           ;
  $9457 DEFW $0000                           ;
@@ -4818,7 +4818,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9477 DEFW $0318                           ;
  $9479 DEFW $6647                           ;
  $947B DEFB $FF                             ; }
- $947C DEFW $B41F                           ; {#TRACESCR
+ $947C DEFW $B41F                           ; {#TRACESCREEN
  $947E DEFW $C671                           ;
  $9480 DEFW $94AB                           ;
  $9482 DEFW $7C9C                           ;
@@ -4842,7 +4842,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $94A6 DEFW $2107                           ;
  $94A8 DEFW $674B                           ;
  $94AA DEFB $FF                             ; }
- $94AB DEFW $7918                           ; {#TRACESCR
+ $94AB DEFW $7918                           ; {#TRACESCREEN
  $94AD DEFW $A0DF                           ;
  $94AF DEFW $95D6                           ;
  $94B1 DEFW $947C                           ;
@@ -4860,7 +4860,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $94C9 DEFW $0601                           ;
  $94CB DEFW $552B                           ;
  $94CD DEFW $FF70                           ; }
- $94CF DEFW $7918                           ; {#TRACESCR
+ $94CF DEFW $7918                           ; {#TRACESCREEN
  $94D1 DEFW $A11A                           ;
  $94D3 DEFW $9552                           ;
  $94D5 DEFW $9A9A                           ;
@@ -4926,7 +4926,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $954D DEFW $0000                           ;
  $954F DEFW $00C1                           ;
  $9551 DEFB $00                             ; }
- $9552 DEFW $B483                           ; {#TRACESCR
+ $9552 DEFW $B483                           ; {#TRACESCREEN
  $9554 DEFW $A197                           ;
  $9556 DEFW $9A5A                           ;
  $9558 DEFW $94CF                           ;
@@ -4992,7 +4992,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $95D0 DEFW $0000                           ;
  $95D2 DEFW $00AE                           ;
  $95D4 DEFW $B000                           ; }
- $95D6 DEFW $B483                           ; {#TRACESCR
+ $95D6 DEFW $B483                           ; {#TRACESCREEN
  $95D8 DEFW $A183                           ;
  $95DA DEFW $95F8                           ;
  $95DC DEFW $94AB                           ;
@@ -5009,7 +5009,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $95F2 DEFW $1002                           ;
  $95F4 DEFW $16FA                           ;
  $95F6 DEFW $FF67                           ; }
- $95F8 DEFW $B41F                           ; {#TRACESCR
+ $95F8 DEFW $B41F                           ; {#TRACESCREEN
  $95FA DEFW $B422                           ;
  $95FC DEFW $0000                           ;
  $95FE DEFW $95D6                           ;
@@ -5039,7 +5039,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $962E DEFW $9D01                           ;
  $9630 DEFW $2488                           ;
  $9632 DEFW $FF67                           ; }
- $9634 DEFW $B41F                           ; {#TRACESCR
+ $9634 DEFW $B41F                           ; {#TRACESCREEN
  $9636 DEFW $B422                           ;
  $9638 DEFW $0000                           ;
  $963A DEFW $968A                           ;
@@ -5082,7 +5082,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9684 DEFW $FF67                           ;
  $9686 DEFW $AAB4                           ;
  $9688 DEFW $ABAD                           ; }
- $968A DEFW $B483                           ; {#TRACESCR
+ $968A DEFW $B483                           ; {#TRACESCREEN
  $968C DEFW $A188                           ;
  $968E DEFW $9634                           ;
  $9690 DEFW $96CC                           ;
@@ -5115,7 +5115,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $96C6 DEFW $9D01                           ;
  $96C8 DEFW $4088                           ;
  $96CA DEFW $FF67                           ; }
- $96CC DEFW $B41F                           ; {#TRACESCR
+ $96CC DEFW $B41F                           ; {#TRACESCREEN
  $96CE DEFW $B422                           ;
  $96D0 DEFW $968A                           ;
  $96D2 DEFW $0000                           ;
@@ -5135,7 +5135,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $96EE DEFW $FA04                           ;
  $96F0 DEFW $6752                           ;
  $96F2 DEFB $FF                             ; }
- $96F3 DEFW $B41F                           ; {#TRACESCR
+ $96F3 DEFW $B41F                           ; {#TRACESCREEN
  $96F5 DEFW $B422                           ;
  $96F7 DEFW $9715                           ;
  $96F9 DEFW $0000                           ;
@@ -5152,7 +5152,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $970F DEFW $0902                           ;
  $9711 DEFW $80FA                           ;
  $9713 DEFW $FF66                           ; }
- $9715 DEFW $B41F                           ; {#TRACESCR
+ $9715 DEFW $B41F                           ; {#TRACESCREEN
  $9717 DEFW $B422                           ;
  $9719 DEFW $0000                           ;
  $971B DEFW $96F3                           ;
@@ -5170,7 +5170,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9733 DEFW $0802                           ;
  $9735 DEFW $96FA                           ;
  $9737 DEFW $FF66                           ; }
- $9739 DEFW $B452                           ; {#TRACESCR
+ $9739 DEFW $B452                           ; {#TRACESCREEN
  $973B DEFW $A384                           ;
  $973D DEFW $99A6                           ;
  $973F DEFW $976E                           ;
@@ -5197,7 +5197,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9769 DEFW $1002                           ;
  $976B DEFW $659C                           ;
  $976D DEFB $FF                             ; }
- $976E DEFW $B41F                           ; {#TRACESCR
+ $976E DEFW $B41F                           ; {#TRACESCREEN
  $9770 DEFW $B422                           ;
  $9772 DEFW $9739                           ;
  $9774 DEFW $0000                           ;
@@ -5225,7 +5225,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $97A0 DEFW $0E65                           ;
  $97A2 DEFW $E0FA                           ;
  $97A4 DEFW $FF66                           ; }
- $97A6 DEFW $B483                           ; {#TRACESCR
+ $97A6 DEFW $B483                           ; {#TRACESCREEN
  $97A8 DEFW $B368                           ;
  $97AA DEFW $9876                           ;
  $97AC DEFW $97F8                           ;
@@ -5266,7 +5266,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $97F2 DEFW $0202                           ;
  $97F4 DEFW $9C07                           ;
  $97F6 DEFW $FF66                           ; }
- $97F8 DEFW $7918                           ; {#TRACESCR
+ $97F8 DEFW $7918                           ; {#TRACESCREEN
  $97FA DEFW $A115                           ;
  $97FC DEFW $97A6                           ;
  $97FE DEFW $0000                           ;
@@ -5292,7 +5292,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9826 DEFW $7984                           ;
  $9828 DEFW $676B                           ;
  $982A DEFB $FF                             ; }
- $982B DEFW $B41F                           ; {#TRACESCR
+ $982B DEFW $B41F                           ; {#TRACESCREEN
  $982D DEFW $C681                           ;
  $982F DEFW $7C9C                           ;
  $9831 DEFW $0000                           ;
@@ -5330,7 +5330,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9871 DEFW $798E                           ;
  $9873 DEFW $6FF5                           ;
  $9875 DEFB $FF                             ; }
- $9876 DEFW $B41F                           ; {#TRACESCR
+ $9876 DEFW $B41F                           ; {#TRACESCREEN
  $9878 DEFW $B422                           ;
  $987A DEFW $98C0                           ;
  $987C DEFW $97A6                           ;
@@ -5367,7 +5367,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $98BA DEFW $8E07                           ;
  $98BC DEFW $1479                           ;
  $98BE DEFW $FF70                           ; }
- $98C0 DEFW $B41F                           ; {#TRACESCR
+ $98C0 DEFW $B41F                           ; {#TRACESCREEN
  $98C2 DEFW $B422                           ;
  $98C4 DEFW $9A9A                           ;
  $98C6 DEFW $9876                           ;
@@ -5406,7 +5406,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9908 DEFW $C5C5                           ;
  $990A DEFW $C5BD                           ;
  $990C DEFB $C5                             ; }
- $990D DEFW $B41F                           ; {#TRACESCR
+ $990D DEFW $B41F                           ; {#TRACESCREEN
  $990F DEFW $B422                           ;
  $9911 DEFW $0000                           ;
  $9913 DEFW $0000                           ;
@@ -5483,7 +5483,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $99A1 DEFW $ADBE                           ;
  $99A3 DEFW $ADAB                           ;
  $99A5 DEFB $AB                             ; }
- $99A6 DEFW $7918                           ; {#TRACESCR
+ $99A6 DEFW $7918                           ; {#TRACESCREEN
  $99A8 DEFW $A110                           ;
  $99AA DEFW $0000                           ;
  $99AC DEFW $9739                           ;
@@ -5543,7 +5543,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9A18 DEFW $9E02                           ;
  $9A1A DEFW $9099                           ;
  $9A1C DEFW $FF65                           ; }
- $9A1E DEFW $B41F                           ; {#TRACESCR
+ $9A1E DEFW $B41F                           ; {#TRACESCREEN
  $9A20 DEFW $B422                           ;
  $9A22 DEFW $0000                           ;
  $9A24 DEFW $7C9C                           ;
@@ -5573,7 +5573,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9A54 DEFW $0E02                           ;
  $9A56 DEFW $4421                           ;
  $9A58 DEFW $FF67                           ; }
- $9A5A DEFW $B452                           ; {#TRACESCR
+ $9A5A DEFW $B452                           ; {#TRACESCREEN
  $9A5C DEFW $A389                           ;
  $9A5E DEFW $0000                           ;
  $9A60 DEFW $9552                           ;
@@ -5605,7 +5605,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9A94 DEFW $0273                           ;
  $9A96 DEFW $990B                           ;
  $9A98 DEFW $FF65                           ; }
- $9A9A DEFW $B483                           ; {#TRACESCR
+ $9A9A DEFW $B483                           ; {#TRACESCREEN
  $9A9C DEFW $A192                           ;
  $9A9E DEFW $94CF                           ;
  $9AA0 DEFW $98C0                           ;
@@ -5638,7 +5638,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9AD6 DEFW $A904                           ;
  $9AD8 DEFW $E071                           ;
  $9ADA DEFW $FF70                           ; }
- $9ADC DEFW $B41F                           ; {#TRACESCR
+ $9ADC DEFW $B41F                           ; {#TRACESCREEN
  $9ADE DEFW $B422                           ;
  $9AE0 DEFW $0000                           ;
  $9AE2 DEFW $0000                           ;
@@ -5669,7 +5669,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9B14 DEFW $889D                           ;
  $9B16 DEFW $6767                           ;
  $9B18 DEFB $FF                             ; }
- $9B19 DEFW $7918                           ; {#TRACESCR
+ $9B19 DEFW $7918                           ; {#TRACESCREEN
  $9B1B DEFW $A133                           ;
  $9B1D DEFW $0000                           ;
  $9B1F DEFW $0000                           ;
@@ -5697,7 +5697,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9B4B DEFW $9D01                           ;
  $9B4D DEFW $0D88                           ;
  $9B4F DEFW $FF67                           ; }
- $9B51 DEFW $7918                           ; {#TRACESCR
+ $9B51 DEFW $7918                           ; {#TRACESCREEN
  $9B53 DEFW $A11F                           ;
  $9B55 DEFW $0000                           ;
  $9B57 DEFW $0000                           ;
@@ -5735,7 +5735,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9B97 DEFW $A003                           ;
  $9B99 DEFW $E971                           ;
  $9B9B DEFW $FF70                           ; }
- $9B9D DEFW $B458                           ; {#TRACESCR
+ $9B9D DEFW $B458                           ; {#TRACESCREEN
  $9B9F DEFW $A1D6                           ;
  $9BA1 DEFW $0000                           ;
  $9BA3 DEFW $0000                           ;
@@ -5772,7 +5772,7 @@ b$791E DEFW $B446                           ; {#TRACESCR
  $9BE1 DEFW $7112                           ;
  $9BE3 DEFW $1900                           ;
  $9BE5 DEFW $FF71                           ; }
- $9BE7 DEFW $B483                           ; {#TRACESCR
+ $9BE7 DEFW $B483                           ; {#TRACESCREEN
  $9BE9 DEFW $A19C                           ;
  $9BEB DEFW $0000                           ;
  $9BED DEFW $9DF5                           ;
@@ -6075,7 +6075,7 @@ c$9DF1 DJNZ $9DD9    ;
  $9DF4 RET           ;
 
 ; Data block at 9DF5
-b$9DF5 DEFB $18,$79                         ; {#TRACESCR$9DF5,$f700,$6590
+b$9DF5 DEFB $18,$79                         ; {#TRACESCREEN$9DF5,$f700,$6590
  $9DF7 DEFW $A138                           ;
  $9DF9 DEFW $9BE7                           ;
  $9DFB DEFW $0000                           ; }
@@ -6084,7 +6084,7 @@ b$9DF5 DEFB $18,$79                         ; {#TRACESCR$9DF5,$f700,$6590
  $9E0D DEFB $7A,$FF,$14,$67,$0C,$48,$73,$02
  $9E15 DEFB $0D,$A4,$65,$0E,$2A,$A7,$6F,$01
  $9E1D DEFB $0B,$2B,$C5,$6F,$FF
- $9E22 DEFW $B41F                           ; {#TRACESCR$9E22,$f700,$6590
+ $9E22 DEFW $B41F                           ; {#TRACESCREEN$9E22,$f700,$6590
  $9E24 DEFB $22                             ;
  $9E25 DEFB $B4                             ;
  $9E26 DEFW $0000                           ;
@@ -6100,7 +6100,7 @@ b$9DF5 DEFB $18,$79                         ; {#TRACESCR$9DF5,$f700,$6590
  $9E5D DEFB $05,$03,$03,$A0,$71,$BD,$70,$05
  $9E65 DEFB $03,$03,$A0,$71,$CA,$70,$05,$03
  $9E6D DEFB $04,$9C,$84,$96,$70,$FF
- $9E73 DEFW $B41F                           ; {#TRACESCR$9E73,$f700,$6590
+ $9E73 DEFW $B41F                           ; {#TRACESCREEN$9E73,$f700,$6590
  $9E75 DEFB $22,$B4                         ;
  $9E77 DEFW $9EB8                           ;
  $9E79 DEFW $0000                           ;
@@ -6113,7 +6113,7 @@ b$9DF5 DEFB $18,$79                         ; {#TRACESCR$9DF5,$f700,$6590
  $9EA5 DEFB $0A,$FA,$E9,$66,$0C,$48,$73,$02
  $9EAD DEFB $0D,$1A,$66,$05,$02,$01,$9D,$88
  $9EB5 DEFB $EC,$66,$FF
- $9EB8 DEFW $7918                           ; {#TRACESCR$9EB8,$f700,$6590
+ $9EB8 DEFW $7918                           ; {#TRACESCREEN$9EB8,$f700,$6590
  $9EBA DEFW $A12E                           ;
  $9EBC DEFB $D9                             ;
  $9EBD DEFB $9E                             ;
@@ -6124,7 +6124,7 @@ b$9DF5 DEFB $18,$79                         ; {#TRACESCR$9DF5,$f700,$6590
  $9EC5 DEFB $78,$FF,$90,$65,$02,$1E,$FA,$DA
  $9ECD DEFB $66,$01,$07,$28,$03,$70,$01,$07
  $9ED5 DEFB $28,$13,$70,$FF
- $9ED9 DEFW $B41F                           ; {#TRACESCR$9ED9,$f700,$6590
+ $9ED9 DEFW $B41F                           ; {#TRACESCREEN$9ED9,$f700,$6590
  $9EDB DEFW $B422                           ;
  $9EDD DEFB $FA,$9E                         ;
  $9EDF DEFW $9EB8                           ;
@@ -6133,7 +6133,7 @@ b$9DF5 DEFB $18,$79                         ; {#TRACESCR$9DF5,$f700,$6590
  $9EE5 DEFB $02,$78,$FF,$90,$65,$02,$1E,$FA
  $9EED DEFB $DA,$66,$01,$07,$28,$05,$70,$01
  $9EF5 DEFB $07,$28,$11,$70,$FF
- $9EFA DEFW $B41F                           ; {#TRACESCR$9EFA,$f700,$6590
+ $9EFA DEFW $B41F                           ; {#TRACESCREEN$9EFA,$f700,$6590
  $9EFC DEFB $22                             ;
  $9EFD DEFB $B4                             ;
  $9EFE DEFW $0000                           ;
@@ -6147,7 +6147,7 @@ b$9DF5 DEFB $18,$79                         ; {#TRACESCR$9DF5,$f700,$6590
  $9F25 DEFB $66,$01,$07,$28,$17,$70,$0C,$48
  $9F2D DEFB $73,$02,$0D,$0E,$66,$05,$02,$01
  $9F35 DEFB $9D,$88,$E0,$66,$FF
- $9F3A DEFW $7918                           ; {#TRACESCR$9F3A,$f700,$6590
+ $9F3A DEFW $7918                           ; {#TRACESCREEN$9F3A,$f700,$6590
  $9F3C DEFB $24                             ;
  $9F3D DEFB $A1                             ;
  $9F3E DEFW $0000                           ;
@@ -6162,7 +6162,7 @@ b$9DF5 DEFB $18,$79                         ; {#TRACESCR$9DF5,$f700,$6590
  $9F6D DEFB $E5,$65,$05,$02,$01,$9D,$88,$68
  $9F75 DEFB $67,$05,$02,$01,$48,$73,$86,$67
  $9F7D DEFB $FF
- $9F7E DEFW $7918                           ; {#TRACESCR$9F7E,$f700,$6590
+ $9F7E DEFW $7918                           ; {#TRACESCREEN$9F7E,$f700,$6590
  $9F80 DEFW $A129                           ;
  $9F82 DEFW $9F3A                           ;
  $9F84 DEFB $22                             ;
@@ -6186,7 +6186,7 @@ b$9DF5 DEFB $18,$79                         ; {#TRACESCR$9DF5,$f700,$6590
  $A00D DEFB $F8,$FD,$FF,$FF,$F7,$FD,$FF,$FF
  $A015 DEFB $F7,$FC,$F9,$F9,$F6,$00,$00,$97
  $A01D DEFB $96,$97,$96,$0D,$0D
- $A022 DEFW $B41F                           ; {#TRACESCR$A022,$f700,$6590
+ $A022 DEFW $B41F                           ; {#TRACESCREEN$A022,$f700,$6590
  $A024 DEFB $22                             ;
  $A025 DEFB $B4                             ;
  $A026 DEFW $9F7E                           ;
