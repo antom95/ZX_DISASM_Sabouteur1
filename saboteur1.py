@@ -10,17 +10,21 @@ class SaboteurHtmlWriter(HtmlWriter):
         self.Memory = []
         return super().__init__(skool_parser, ref_parser, file_info)
 
+    def get_word_from_snapshot(self, addr):
+        return self.snapshot[addr] + 256 * self.snapshot[addr + 1]
+
     def ScanRoom(self, address, x, y):
         if address in self.RoomsList:
             return
         self.RoomsList.append(address)
         self.drawGameScreen(address, 0x6590)
-        self.Rooms.append([x, y, [self.Memory[x] for x in range(0x6590,0x6590+510)]]);
+        self.Rooms.append([x, y, [self.Memory[x] for x in range(0x6590, 0x6590+510)]])
 
-        addressLeft = self.snapshot[address+4]+256*self.snapshot[address+5]
-        addressRight= self.snapshot[address+6]+256*self.snapshot[address+7]
-        addressUp   = self.snapshot[address+8]+256*self.snapshot[address+9]
-        addressDown = self.snapshot[address+10]+256*self.snapshot[address+11]
+        addressLeft = self.get_word_from_snapshot(address + 4)
+        addressRight = self.get_word_from_snapshot(address + 6)
+        addressUp = self.get_word_from_snapshot(address + 8)
+        addressDown = self.get_word_from_snapshot(address + 10)
+
         if addressLeft > 0x4000:
             self.ScanRoom(addressLeft, x-1, y)
         if addressRight > 0x4000:
@@ -31,30 +35,26 @@ class SaboteurHtmlWriter(HtmlWriter):
             self.ScanRoom(addressDown, x, y+1)
         return
 
-
     def expand_sprites(self, text, index, cwd):
-        end, address, width, len, attrindex, step = parse_ints(text, index, 5)
+        end, address, width, length, attr_index, step = parse_ints(text, index, 5)
         lines = []
         while address < 0xf700:
             line = []
             for i in range(width):
-                line.append( Udg((self.snapshot[address+attrindex] if self.snapshot[address+attrindex]!=0xff else 7) if attrindex != 10 else 7, self.snapshot[address:address+8*step+8:step]))
+                line.append(Udg((self.snapshot[address+attr_index] if self.snapshot[address+attr_index] != 0xff else 7) if attr_index != 10 else 7, self.snapshot[address:address+8*step+8:step]))
                 #line.append( Udg(self.snapshot[address+attrindex] if attrindex != 10 else 7, self.snapshot[address+8*step:address+8*step+8:step]))
 
-                address += len
+                address += length
             lines.append(line)
 
         frame = Frame(lines, 3)
-        fname = 'tmpSprites{}_{}_{}_{}_{}'.format(address, width, len, attrindex, step)
+        fname = 'tmpSprites{}_{}_{}_{}_{}'.format(address, width, length, attr_index, step)
         return end, self.handle_image(frame, fname, cwd)
 
-
-
-    # #SCANGAMEMAPaddress
     def expand_scangamemap(self, text, index, cwd):
         end, address = parse_ints(text, index, 1)
         self.Memory = self.snapshot
-        self.RoomsList =[]
+        self.RoomsList = []
         self.Rooms = []
         self.ScanRoom(address, 0, 0)
         minx = min([self.Rooms[i][0] for i in range(len(self.Rooms))])
@@ -74,7 +74,7 @@ class SaboteurHtmlWriter(HtmlWriter):
                     GameMap[ys+y][xs+x]=r[2][y*30+x]
 
         lines = []
-        for y in range (MapHeigh*17):
+        for y in range(MapHeigh*17):
             line = []
             for x in range(MapWidth*30):
                 c_address = 0xf700 + GameMap[y][x]*9;
@@ -86,8 +86,7 @@ class SaboteurHtmlWriter(HtmlWriter):
         fname = 'gameBgmap_{}'.format(address)
 
         #return end, 'Map Scanned at {}. Rooms:{}'.format(address,len(self.RoomsList) + self.handle_image(frame, fname, cwd)
-        return end, '({},{})-({},{})'.format(minx,miny,maxx,maxy) + self.handle_image(frame, fname, cwd)
-
+        return end, '({},{})-({},{})'.format(minx, miny, maxx, maxy) + self.handle_image(frame, fname, cwd)
 
     # #SMAPaddress,address2
     def expand_smap(self, text, index, cwd):
@@ -118,7 +117,7 @@ class SaboteurHtmlWriter(HtmlWriter):
                 cnt = c-0x14
                 c = self.snapshot[address]
                 address = address+1
-                c_address = c*9 + address2;
+                c_address = c*9 + address2
                 for i in range(cnt):
                     line.append(Udg(self.snapshot[c_address+8], self.snapshot[c_address:c_address+8]))
                     x = x + 1
@@ -180,6 +179,7 @@ class SaboteurHtmlWriter(HtmlWriter):
             addr1 %= 30*17
             addr1 += bufaddress
             return addr1
+            return self.Memory[ref_addr] + self.Memory[ref_addr+1]*256 - bufaddress
 
         for i in range(30*17):
              self.Memory[bufaddress + i] = 0
@@ -212,7 +212,7 @@ class SaboteurHtmlWriter(HtmlWriter):
                 cnt = self.Memory[address]; address += 1
                 c   = self.Memory[address]; address += 1
                 addr1 = gaddr(address) ; address += 2
-                for x in range (cnt):
+                for x in range(cnt):
                     self.Memory[addr1 + x]=c
                 drawlog += 'Horizontal line from '+ a2p(addr1) + ' by ${:02X} {} times'.format(c, cnt)
 
@@ -221,7 +221,7 @@ class SaboteurHtmlWriter(HtmlWriter):
                 xmax  = self.Memory[address]; address += 1
                 ymax  = self.Memory[address]; address += 1
                 addr1 = gaddr(address) ; address += 2
-                for y in range (ymax):
+                for y in range(ymax):
                     for x in range(xmax):
                         self.Memory[addr1+x+y*30]=c
                 drawlog += 'Fill {}x{} by ${:02X} to '.format(xmax, ymax, c) + a2p(addr1)
