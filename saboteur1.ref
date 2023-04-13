@@ -1,3 +1,6 @@
 [Config]
 HtmlWriterClass=../:saboteur1.SaboteurHtmlWriter
 GameDir=Saboteur1
+
+[Game]
+name=Saboteur! by Durell Software Ltd
